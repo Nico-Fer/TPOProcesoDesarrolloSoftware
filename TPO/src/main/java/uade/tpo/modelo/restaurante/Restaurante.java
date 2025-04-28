@@ -2,7 +2,6 @@ package uade.tpo.modelo.restaurante;
 
 import uade.tpo.modelo.menu.Menu;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Restaurante {

@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/dtos/TarjetaCreditoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/dtos/TarjetaDebitoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/enums/TipoMetodoPago.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/MetodoPagoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/MetodoPagoFactoryProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/TarjetaCreditoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/TarjetaDebitoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/metodoPagoFactory/TarjetaCreditoFactoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/metodoPagoFactory/TarjetaDebitoFactoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MetodoPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MetodoPago.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaCredito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaDebito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaDebito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pago/PagoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pago/PagoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +63,8 @@
     "JUnit.MenuTest.filtrarProductosPorPrecioConResultados.executor": "Run",
     "JUnit.MenuTest.filtrarProductosPorPrecioSinResultados.executor": "Run",
     "JUnit.MenuTest.obtenerListaDeProductosDelMenu.executor": "Run",
+    "JUnit.MetodoPagoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor": "Debug",
+    "JUnit.PagoTest.crearTarjetaCreditoConDatosValidos.executor": "Run",
     "JUnit.ProductoTest.crearProductoCorrectamente.executor": "Run",
     "JUnit.ProductoTest.executor": "Run",
     "JUnit.ProductoTest.obtenerDescripcionDelProducto.executor": "Run",
@@ -59,9 +74,21 @@
     "JUnit.ProductoTest.productoContieneIngredientesAlergenicos.executor": "Run",
     "JUnit.ProductoTest.productoSinIngredientesAlergenicos.executor": "Run",
     "JUnit.ProductoTest.productoSinIngredientesDebeNoTenerAlergenicos.executor": "Run",
+    "JUnit.RestauranteTest.actualizarMenuDelRestaurante.executor": "Run",
+    "JUnit.RestauranteTest.actualizarMenuDelRestauranteConNull.executor": "Run",
+    "JUnit.RestauranteTest.cambiarNombreDelRestaurante.executor": "Run",
     "JUnit.RestauranteTest.crearRestauranteCorrectamente.executor": "Run",
+    "JUnit.RestauranteTest.executor": "Run",
     "JUnit.RestauranteTest.obtenerMenuDelRestaurante.executor": "Run",
     "JUnit.RestauranteTest.obtenerNombreDelRestaurante.executor": "Run",
+    "JUnit.TarjetaCreditoFactoryTest.crearPagoConDatosNulosDebeFallar.executor": "Run",
+    "JUnit.TarjetaCreditoFactoryTest.crearPagoSinCvvDebeFallar.executor": "Run",
+    "JUnit.TarjetaCreditoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.TarjetaDebitoFactoryTest.crearPagoConDatosNulosDebeFallar.executor": "Run",
+    "JUnit.TarjetaDebitoFactoryTest.crearPagoSinCvvDebeFallar.executor": "Run",
+    "JUnit.TarjetaDebitoFactoryTest.tarjetaDebitoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.TipoMetodoPagoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.TipoMetodoPagoFactoryTest.tarjetaDebitoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -84,81 +111,82 @@
       <recent name="C:\Users\nico\Documents\TPOProcesoDesarrolloSoftware\TPOProcesoDesarrolloSoftware\TPO\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RestauranteTest">
-    <configuration name="RestauranteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PagoTest.procesarPagoConTarjetaCreditoNoLanzaExcepciones">
+    <configuration name="PagoTest.crearTarjetaCreditoConDatosValidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.pago.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RestauranteTest.actualizarMenuDelRestaurante" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
-      <option name="METHOD_NAME" value="actualizarMenuDelRestaurante" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pago" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pago.PagoTest" />
+      <option name="METHOD_NAME" value="crearTarjetaCreditoConDatosValidos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestauranteTest.actualizarMenuDelRestauranteConNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PagoTest.procesarPagoConTarjetaCreditoNoLanzaExcepciones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.pago.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
-      <option name="METHOD_NAME" value="actualizarMenuDelRestauranteConNull" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pago" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pago.PagoTest" />
+      <option name="METHOD_NAME" value="procesarPagoConTarjetaCreditoNoLanzaExcepciones" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestauranteTest.cambiarNombreDelRestaurante" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TarjetaCreditoFactoryTest.crearPagoConDatosNulosDebeFallar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.metodoPagoFactory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
-      <option name="METHOD_NAME" value="cambiarNombreDelRestaurante" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.metodoPagoFactory" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.metodoPagoFactory.TarjetaCreditoFactoryTest" />
+      <option name="METHOD_NAME" value="crearPagoConDatosNulosDebeFallar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestauranteTest.obtenerMenuDelRestaurante" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TarjetaDebitoFactoryTest.crearPagoConDatosNulosDebeFallar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.metodoPagoFactory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
-      <option name="METHOD_NAME" value="obtenerMenuDelRestaurante" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.metodoPagoFactory" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.metodoPagoFactory.TarjetaDebitoFactoryTest" />
+      <option name="METHOD_NAME" value="crearPagoConDatosNulosDebeFallar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TarjetaDebitoFactoryTest.crearPagoSinCvvDebeFallar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.metodoPagoFactory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.metodoPagoFactory" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.metodoPagoFactory.TarjetaDebitoFactoryTest" />
+      <option name="METHOD_NAME" value="crearPagoSinCvvDebeFallar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RestauranteTest" />
-        <item itemvalue="JUnit.RestauranteTest.actualizarMenuDelRestauranteConNull" />
-        <item itemvalue="JUnit.RestauranteTest.actualizarMenuDelRestaurante" />
-        <item itemvalue="JUnit.RestauranteTest.cambiarNombreDelRestaurante" />
-        <item itemvalue="JUnit.RestauranteTest.obtenerMenuDelRestaurante" />
+        <item itemvalue="JUnit.PagoTest.procesarPagoConTarjetaCreditoNoLanzaExcepciones" />
+        <item itemvalue="JUnit.PagoTest.crearTarjetaCreditoConDatosValidos" />
+        <item itemvalue="JUnit.TarjetaDebitoFactoryTest.crearPagoConDatosNulosDebeFallar" />
+        <item itemvalue="JUnit.TarjetaDebitoFactoryTest.crearPagoSinCvvDebeFallar" />
+        <item itemvalue="JUnit.TarjetaCreditoFactoryTest.crearPagoConDatosNulosDebeFallar" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +221,7 @@
       <workItem from="1745675371200" duration="376000" />
       <workItem from="1745787334081" duration="2167000" />
       <workItem from="1745789960050" duration="1209000" />
-      <workItem from="1745844304562" duration="5277000" />
+      <workItem from="1745844304562" duration="15170000" />
     </task>
     <servers />
   </component>
