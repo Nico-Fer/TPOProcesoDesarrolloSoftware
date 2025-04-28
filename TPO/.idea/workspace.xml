@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Ingrediente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Ingrediente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/menu/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/producto/ProductoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/producto/ProductoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/Menu/MenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/Menu/MenuTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +43,14 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.ClienteTest.crearCliente.executor": "Run",
+    "JUnit.MenuTest.agregarProductoAlMenuCorrectamente.executor": "Run",
+    "JUnit.MenuTest.agregarProductosDuplicadosAlMenu.executor": "Run",
+    "JUnit.MenuTest.buscarProductoExistentePorNombre.executor": "Run",
+    "JUnit.MenuTest.buscarProductoInexistentePorNombre.executor": "Run",
+    "JUnit.MenuTest.executor": "Run",
+    "JUnit.MenuTest.filtrarProductosPorPrecioConResultados.executor": "Run",
+    "JUnit.MenuTest.filtrarProductosPorPrecioSinResultados.executor": "Run",
+    "JUnit.MenuTest.obtenerListaDeProductosDelMenu.executor": "Run",
     "JUnit.ProductoTest.crearProductoCorrectamente.executor": "Run",
     "JUnit.ProductoTest.executor": "Run",
     "JUnit.ProductoTest.obtenerDescripcionDelProducto.executor": "Run",
@@ -76,7 +82,70 @@
       <recent name="C:\Users\nico\Documents\TPOProcesoDesarrolloSoftware\TPOProcesoDesarrolloSoftware\TPO\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductoTest">
+  <component name="RunManager" selected="JUnit.MenuTest">
+    <configuration name="MenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.agregarProductosDuplicadosAlMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
+      <option name="METHOD_NAME" value="agregarProductosDuplicadosAlMenu" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.filtrarProductosPorPrecioConResultados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
+      <option name="METHOD_NAME" value="filtrarProductosPorPrecioConResultados" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.filtrarProductosPorPrecioSinResultados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
+      <option name="METHOD_NAME" value="filtrarProductosPorPrecioSinResultados" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
@@ -92,77 +161,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductoTest.productoConIngredientesNullDebeNoTenerAlergenicos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.producto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.producto" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.producto.ProductoTest" />
-      <option name="METHOD_NAME" value="productoConIngredientesNullDebeNoTenerAlergenicos" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductoTest.productoContieneIngredientesAlergenicos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.producto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.producto" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.producto.ProductoTest" />
-      <option name="METHOD_NAME" value="productoContieneIngredientesAlergenicos" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductoTest.productoSinIngredientesAlergenicos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.producto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.producto" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.producto.ProductoTest" />
-      <option name="METHOD_NAME" value="productoSinIngredientesAlergenicos" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductoTest.productoSinIngredientesDebeNoTenerAlergenicos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.producto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.producto" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.producto.ProductoTest" />
-      <option name="METHOD_NAME" value="productoSinIngredientesDebeNoTenerAlergenicos" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MenuTest" />
+        <item itemvalue="JUnit.MenuTest.agregarProductosDuplicadosAlMenu" />
         <item itemvalue="JUnit.ProductoTest" />
-        <item itemvalue="JUnit.ProductoTest.productoConIngredientesNullDebeNoTenerAlergenicos" />
-        <item itemvalue="JUnit.ProductoTest.productoSinIngredientesDebeNoTenerAlergenicos" />
-        <item itemvalue="JUnit.ProductoTest.productoSinIngredientesAlergenicos" />
-        <item itemvalue="JUnit.ProductoTest.productoContieneIngredientesAlergenicos" />
+        <item itemvalue="JUnit.MenuTest.filtrarProductosPorPrecioSinResultados" />
+        <item itemvalue="JUnit.MenuTest.filtrarProductosPorPrecioConResultados" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +190,7 @@
       <workItem from="1745675371200" duration="376000" />
       <workItem from="1745787334081" duration="2167000" />
       <workItem from="1745789960050" duration="1209000" />
-      <workItem from="1745844304562" duration="2856000" />
+      <workItem from="1745844304562" duration="4262000" />
     </task>
     <servers />
   </component>

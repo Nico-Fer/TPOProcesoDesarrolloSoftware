@@ -2,6 +2,7 @@ package uade.tpo.modelo.producto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Producto {
 
@@ -15,11 +16,7 @@ public class Producto {
         this.descripcion = descripcion;
         this.precio = precio;
 
-        if(ingredientes == null) {
-            this.ingredientes = new ArrayList<Ingrediente>();
-        }else {
-            this.ingredientes = ingredientes;
-        }
+        this.ingredientes = Objects.requireNonNullElseGet(ingredientes, ArrayList::new);
     }
 
     public String getNombre() {
