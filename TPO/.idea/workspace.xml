@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/Menu/MenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/Menu/MenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +59,9 @@
     "JUnit.ProductoTest.productoContieneIngredientesAlergenicos.executor": "Run",
     "JUnit.ProductoTest.productoSinIngredientesAlergenicos.executor": "Run",
     "JUnit.ProductoTest.productoSinIngredientesDebeNoTenerAlergenicos.executor": "Run",
+    "JUnit.RestauranteTest.crearRestauranteCorrectamente.executor": "Run",
+    "JUnit.RestauranteTest.obtenerMenuDelRestaurante.executor": "Run",
+    "JUnit.RestauranteTest.obtenerNombreDelRestaurante.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -82,92 +84,93 @@
       <recent name="C:\Users\nico\Documents\TPOProcesoDesarrolloSoftware\TPOProcesoDesarrolloSoftware\TPO\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MenuTest">
-    <configuration name="MenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RestauranteTest">
+    <configuration name="RestauranteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuTest.agregarProductosDuplicadosAlMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestauranteTest.actualizarMenuDelRestaurante" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
-      <option name="METHOD_NAME" value="agregarProductosDuplicadosAlMenu" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
+      <option name="METHOD_NAME" value="actualizarMenuDelRestaurante" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuTest.filtrarProductosPorPrecioConResultados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestauranteTest.actualizarMenuDelRestauranteConNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
-      <option name="METHOD_NAME" value="filtrarProductosPorPrecioConResultados" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
+      <option name="METHOD_NAME" value="actualizarMenuDelRestauranteConNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuTest.filtrarProductosPorPrecioSinResultados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestauranteTest.cambiarNombreDelRestaurante" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.Menu.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.Menu" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.Menu.MenuTest" />
-      <option name="METHOD_NAME" value="filtrarProductosPorPrecioSinResultados" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
+      <option name="METHOD_NAME" value="cambiarNombreDelRestaurante" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestauranteTest.obtenerMenuDelRestaurante" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.producto.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.producto" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.producto.ProductoTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteTest" />
+      <option name="METHOD_NAME" value="obtenerMenuDelRestaurante" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MenuTest" />
-        <item itemvalue="JUnit.MenuTest.agregarProductosDuplicadosAlMenu" />
-        <item itemvalue="JUnit.ProductoTest" />
-        <item itemvalue="JUnit.MenuTest.filtrarProductosPorPrecioSinResultados" />
-        <item itemvalue="JUnit.MenuTest.filtrarProductosPorPrecioConResultados" />
+        <item itemvalue="JUnit.RestauranteTest" />
+        <item itemvalue="JUnit.RestauranteTest.actualizarMenuDelRestauranteConNull" />
+        <item itemvalue="JUnit.RestauranteTest.actualizarMenuDelRestaurante" />
+        <item itemvalue="JUnit.RestauranteTest.cambiarNombreDelRestaurante" />
+        <item itemvalue="JUnit.RestauranteTest.obtenerMenuDelRestaurante" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +193,7 @@
       <workItem from="1745675371200" duration="376000" />
       <workItem from="1745787334081" duration="2167000" />
       <workItem from="1745789960050" duration="1209000" />
-      <workItem from="1745844304562" duration="4262000" />
+      <workItem from="1745844304562" duration="5277000" />
     </task>
     <servers />
   </component>
