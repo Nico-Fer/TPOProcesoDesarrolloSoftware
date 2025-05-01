@@ -5,23 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/CuponDescuento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/CuponVacio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/PorcentajeDescuento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnEsperaState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnPreparacionState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EntregadoState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ListoParaEntregarState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/CuponDescuento/CuponDescuentoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram0.asta" beforeDir="false" afterPath="$PROJECT_DIR$/../Class Diagram0.asta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram0.asta.lock" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/NotificadorPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverMesero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/personalRestaurante/Mesero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/personalRestaurante/PersonalRestaurante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteFlujoRealTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +55,9 @@
     "JUnit.ClienteTest.agregarProductoSinPedidoActivoLanzaExcepcion.executor": "Run",
     "JUnit.ClienteTest.aplicarCuponCorrectamente.executor": "Run",
     "JUnit.ClienteTest.aplicarCuponSinPedidoActivoLanzaExcepcion.executor": "Run",
+    "JUnit.ClienteTest.cancelarPedidoActivoCorrectamente.executor": "Run",
+    "JUnit.ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo.executor": "Run",
+    "JUnit.ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion.executor": "Run",
     "JUnit.ClienteTest.crearCliente.executor": "Run",
     "JUnit.ClienteTest.crearClienteCorrectamente.executor": "Run",
     "JUnit.ClienteTest.executor": "Run",
@@ -107,6 +104,7 @@
     "JUnit.ProductoTest.productoContieneIngredientesAlergenicos.executor": "Run",
     "JUnit.ProductoTest.productoSinIngredientesAlergenicos.executor": "Run",
     "JUnit.ProductoTest.productoSinIngredientesDebeNoTenerAlergenicos.executor": "Run",
+    "JUnit.RestauranteFlujoRealTest.executor": "Run",
     "JUnit.RestauranteTest.actualizarMenuDelRestaurante.executor": "Run",
     "JUnit.RestauranteTest.actualizarMenuDelRestauranteConNull.executor": "Run",
     "JUnit.RestauranteTest.cambiarNombreDelRestaurante.executor": "Run",
@@ -145,7 +143,7 @@
       <recent name="C:\Users\nico\Documents\TPOProcesoDesarrolloSoftware\TPOProcesoDesarrolloSoftware\TPO\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in TPO">
+  <component name="RunManager" selected="JUnit.RestauranteFlujoRealTest">
     <configuration name="ClienteTest.cancelarPedidoActivoCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
@@ -194,18 +192,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteTest.pagarPedidoFlujoCompleto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestauranteFlujoRealTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.cliente.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.cliente" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.cliente.ClienteTest" />
-      <option name="METHOD_NAME" value="pagarPedidoFlujoCompleto" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteFlujoRealTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -220,11 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RestauranteFlujoRealTest" />
         <item itemvalue="JUnit.java in TPO" />
         <item itemvalue="JUnit.ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion" />
         <item itemvalue="JUnit.ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo" />
         <item itemvalue="JUnit.ClienteTest.cancelarPedidoActivoCorrectamente" />
-        <item itemvalue="JUnit.ClienteTest.pagarPedidoFlujoCompleto" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +246,7 @@
       <workItem from="1745789960050" duration="1209000" />
       <workItem from="1745844304562" duration="19606000" />
       <workItem from="1745929316718" duration="2749000" />
-      <workItem from="1746104876018" duration="7203000" />
+      <workItem from="1746104876018" duration="13478000" />
     </task>
     <servers />
   </component>

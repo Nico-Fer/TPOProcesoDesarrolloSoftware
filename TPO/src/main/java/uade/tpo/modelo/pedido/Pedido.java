@@ -2,6 +2,8 @@ package uade.tpo.modelo.pedido;
 
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
 import uade.tpo.modelo.cuponDescuento.CuponVacio;
+import uade.tpo.modelo.observerPedido.NotificadorPedido;
+import uade.tpo.modelo.observerPedido.ObserverPedido;
 import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedidoState.EnEsperaState;
 import uade.tpo.modelo.pedidoState.EstadoPedidoState;
@@ -17,10 +19,12 @@ public class Pedido {
     private String numeroOrden;
     private static int contadorOrdenes = 1;
     private CuponDescuento cupon = new CuponVacio();
+    NotificadorPedido notificadorPedido = new NotificadorPedido();
 
     public void SetEstado(EstadoPedidoState estado) {
         this.estadoPedido = estado;
         this.estadoPedido.SetPedido(this);
+        this.notificadorPedido.notificarSuscriptores(this);
     }
 
     public void agregarProducto(Producto producto) {
@@ -73,6 +77,14 @@ public class Pedido {
             throw new IllegalStateException("El pedido debe ser confirmado primero.");
         }
         estadoPedido.AvanzarEstadoPedido();
+    }
+
+    public void agregarSuscriptor(ObserverPedido suscriptor) {
+        notificadorPedido.agregarSuscriptor(suscriptor);
+    }
+
+    public void quitarSuscriptor(ObserverPedido suscriptor) {
+        notificadorPedido.quitarSuscriptor(suscriptor);
     }
 
     public EstadoPedidoState getEstado() {

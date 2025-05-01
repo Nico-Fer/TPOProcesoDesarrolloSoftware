@@ -3,6 +3,8 @@ package uade.tpo.modelo.cliente;
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
 import uade.tpo.modelo.cuponDescuento.CuponVacio;
 import uade.tpo.modelo.menu.Menu;
+import uade.tpo.modelo.observerPedido.ObserverCliente;
+import uade.tpo.modelo.observerPedido.ObserverPedido;
 import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedido.Pedido;
 import uade.tpo.modelo.producto.Producto;
@@ -51,6 +53,10 @@ public class Cliente {
         }
         pedidos.remove(pedidoActivo);
         pedidoActivo = null;
+    }
+
+    public ObserverPedido crearObserverPedido() {
+        return new ObserverCliente(this);
     }
 
     public void AgregarProductoAPedidoActivo(Menu menu, String nombreProducto) {
