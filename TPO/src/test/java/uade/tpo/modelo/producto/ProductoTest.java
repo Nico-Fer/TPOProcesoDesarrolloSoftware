@@ -19,7 +19,8 @@ public class ProductoTest {
                 "Pizza de Muzarella",
                 "Pizza clásica con queso y tomate",
                 1500.0,
-                List.of(queso, tomate)
+                List.of(queso, tomate),
+                null
         );
 
         assertEquals("Pizza de Muzarella", pizzaMuzarella.getNombre());
@@ -38,7 +39,8 @@ public class ProductoTest {
                 "Sándwich de Jamón",
                 "Pan con jamón",
                 900.0,
-                List.of(jamon)
+                List.of(jamon),
+                null
         );
 
         String nombre = sandwich.getNombre();
@@ -54,7 +56,8 @@ public class ProductoTest {
                 "Ensalada verde",
                 "Lechuga fresca con aderezo",
                 750.0,
-                List.of(lechuga)
+                List.of(lechuga),
+                null
         );
 
         String descripcion = ensalada.getDescripcion();
@@ -70,7 +73,8 @@ public class ProductoTest {
                 "Empanada de cebolla",
                 "Empanada con cebolla caramelizada",
                 800.0,
-                List.of(cebolla)
+                List.of(cebolla),
+                null
         );
 
         double precio = empanada.getPrecio();
@@ -87,7 +91,8 @@ public class ProductoTest {
                 "Arroz con Pollo",
                 "Plato tradicional de arroz con pollo",
                 1800.0,
-                List.of(pollo, arroz)
+                List.of(pollo, arroz),
+                null
         );
 
         List<Ingrediente> ingredientes = plato.getIngredientes();
@@ -107,7 +112,8 @@ public class ProductoTest {
                 "Postre de Maní",
                 "Delicioso postre con maní",
                 2200.0,
-                List.of(mani, chocolate)
+                List.of(mani, chocolate),
+                null
         );
 
         boolean contieneAlergenos = postreDeMani.tieneIngredientesAlergenicos();
@@ -124,7 +130,8 @@ public class ProductoTest {
                 "Pizza común",
                 "Pizza sin ingredientes alergénicos",
                 1600.0,
-                List.of(queso, tomate)
+                List.of(queso, tomate),
+                null
         );
 
         boolean contieneAlergenos = pizzaComun.tieneIngredientesAlergenicos();
@@ -139,7 +146,8 @@ public class ProductoTest {
                 "Agua Mineral",
                 "Botella de agua sin gas",
                 500.0,
-                Collections.emptyList() // Lista vacía de ingredientes
+                Collections.emptyList(),
+                null
         );
 
         boolean contieneAlergenos = bebida.tieneIngredientesAlergenicos();
@@ -154,6 +162,7 @@ public class ProductoTest {
                 "Gaseosa",
                 "Bebida carbonatada",
                 700.0,
+                null,
                 null
         );
 

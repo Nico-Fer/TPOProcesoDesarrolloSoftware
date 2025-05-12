@@ -1,5 +1,7 @@
 package uade.tpo.modelo.producto;
 
+import uade.tpo.modelo.enums.Categoria;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -10,13 +12,14 @@ public class Producto {
     private String descripcion;
     private double precio;
     private List<Ingrediente> ingredientes;
+    private List<Categoria> categorias;
 
-    public Producto(String nombre, String descripcion, double precio, List<Ingrediente> ingredientes) {
+    public Producto(String nombre, String descripcion, double precio, List<Ingrediente> ingredientes, List<Categoria> categorias) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-
         this.ingredientes = Objects.requireNonNullElseGet(ingredientes, ArrayList::new);
+        this.categorias = Objects.requireNonNullElseGet(categorias, ArrayList::new);
     }
 
     public String getNombre() {
@@ -40,6 +43,10 @@ public class Producto {
             return false;
         }
         return ingredientes.stream()
-                .anyMatch(Ingrediente::EsAlergenico);
+                .anyMatch(Ingrediente::esAlergenico);
+    }
+
+    public boolean perteneceACategoria(Categoria categoria) {
+        return categorias.contains(categoria);
     }
 }

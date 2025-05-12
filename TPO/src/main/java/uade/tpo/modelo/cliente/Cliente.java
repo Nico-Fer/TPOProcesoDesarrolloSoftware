@@ -1,7 +1,6 @@
 package uade.tpo.modelo.cliente;
 
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
-import uade.tpo.modelo.cuponDescuento.CuponVacio;
 import uade.tpo.modelo.menu.Menu;
 import uade.tpo.modelo.observerPedido.ObserverCliente;
 import uade.tpo.modelo.observerPedido.ObserverPedido;
@@ -41,13 +40,13 @@ public class Cliente {
         return pedidos;
     }
 
-    public void IniciarPedido() {
+    public void iniciarPedido() {
         Pedido pedido = new Pedido();
         this.pedidoActivo = pedido;
         pedidos.add(pedido);
     }
 
-    public void CancelarPedido() {
+    public void cancelarPedido() {
         if (pedidoActivo == null) {
             throw new IllegalStateException("No hay pedido activo para cancelar.");
         }
@@ -59,7 +58,7 @@ public class Cliente {
         return new ObserverCliente(this);
     }
 
-    public void AgregarProductoAPedidoActivo(Menu menu, String nombreProducto) {
+    public void agregarProductoAPedidoActivo(Menu menu, String nombreProducto) {
         if (pedidoActivo == null) {
             throw new IllegalStateException("No hay pedido activo para agregar productos.");
         }
@@ -70,14 +69,14 @@ public class Cliente {
         pedidoActivo.agregarProducto(producto);
     }
 
-    public void AplicarCuponACarrito(CuponDescuento cupon) {
+    public void aplicarCuponACarrito(CuponDescuento cupon) {
         if (pedidoActivo == null) {
             throw new IllegalStateException("No hay pedido activo para aplicar cupón.");
         }
-        this.pedidoActivo.AplicarCupon(cupon);
+        this.pedidoActivo.aplicarCupon(cupon);
     }
 
-    public void PagarPedido(MetodoPago metodoPago) {
+    public void pagarPedido(MetodoPago metodoPago) {
         if (pedidoActivo == null) {
             throw new IllegalStateException("No hay pedido activo para pagar.");
         }

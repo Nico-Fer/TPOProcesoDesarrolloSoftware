@@ -18,7 +18,7 @@ public class TarjetaDebito implements MetodoPago{
     }
 
     @Override
-    public void ProcesarPago(double monto) {
+    public void procesarPago(double monto) {
         System.out.println("Procesando pago de $" + monto + " con tarjeta de débito.");
     }
 }

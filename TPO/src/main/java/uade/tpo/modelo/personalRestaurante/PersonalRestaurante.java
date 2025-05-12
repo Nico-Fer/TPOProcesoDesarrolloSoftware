@@ -10,5 +10,4 @@ public class PersonalRestaurante {
     }
 
     public String getNombre() { return nombre; }
-    public String getRol() { return rol; }
 }

@@ -24,6 +24,6 @@ public class PagoTest {
 
         MetodoPago tarjeta = new TarjetaCredito("1234567890123456", "123");
 
-        assertDoesNotThrow(() -> tarjeta.ProcesarPago(5000.0));
+        assertDoesNotThrow(() -> tarjeta.procesarPago(5000.0));
     }
 }

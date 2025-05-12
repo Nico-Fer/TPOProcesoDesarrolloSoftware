@@ -2,6 +2,7 @@ package uade.tpo.modelo.Menu;
 
 import org.junit.jupiter.api.Test;
 
+import uade.tpo.modelo.enums.Categoria;
 import uade.tpo.modelo.menu.Menu;
 import uade.tpo.modelo.producto.Producto;
 
@@ -20,7 +21,8 @@ public class MenuTest {
                 "Pizza de Muzarella",
                 "Pizza clásica",
                 1500.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
 
         menu.agregarProducto(pizza);
@@ -37,13 +39,15 @@ public class MenuTest {
                 "Pizza",
                 "Pizza común",
                 1500.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         Producto empanada = new Producto(
                 "Empanada",
                 "Empanada de carne",
                 800.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         menu.agregarProducto(pizza);
         menu.agregarProducto(empanada);
@@ -63,7 +67,8 @@ public class MenuTest {
                 "Pizza",
                 "Pizza napolitana",
                 1600.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         menu.agregarProducto(pizza);
 
@@ -81,7 +86,8 @@ public class MenuTest {
                 "Hamburguesa",
                 "Hamburguesa con queso",
                 1800.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         menu.agregarProducto(hamburguesa);
 
@@ -98,19 +104,22 @@ public class MenuTest {
                 "Agua",
                 "Botella de agua",
                 500.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         Producto pizza = new Producto(
                 "Pizza",
                 "Pizza especial",
                 2000.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         Producto hamburguesa = new Producto(
                 "Hamburguesa",
                 "Hamburguesa con queso",
                 1000.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         menu.agregarProducto(agua);
         menu.agregarProducto(pizza);
@@ -130,13 +139,15 @@ public class MenuTest {
                 "Sushi",
                 "Rolls de salmón",
                 3000.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         Producto lomo = new Producto(
                 "Lomo",
                 "Lomo a la pimienta",
                 3500.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
         menu.agregarProducto(sushi);
         menu.agregarProducto(lomo);
@@ -154,7 +165,8 @@ public class MenuTest {
                 "Pizza",
                 "Pizza común",
                 1500.0,
-                Collections.emptyList()
+                Collections.emptyList(),
+                null
         );
 
 
@@ -162,5 +174,43 @@ public class MenuTest {
         menu.agregarProducto(pizza);
 
         assertEquals(1, menu.getProductos().size());
+    }
+
+    @Test
+    void filtrarPorCategoriaEntradaDevuelveSoloEntradas() {
+        Menu menu = new Menu();
+
+        Producto entrada = new Producto(
+                "Bruschetta",
+                "Pan tostado con tomate",
+                800.0,
+                Collections.emptyList(),
+                List.of(Categoria.ENTRADA)
+        );
+
+        menu.agregarProducto(entrada);
+
+        List<Producto> resultado = menu.filtrarPorCategoria(Categoria.ENTRADA);
+        assertEquals(1, resultado.size());
+        assertTrue(resultado.contains(entrada));
+    }
+
+    @Test
+    void filtrarPorCategoriaPrincipalDevuelveSoloPlatosPrincipales() {
+        Menu menu = new Menu();
+
+        Producto principal = new Producto(
+                "Milanesa con papas",
+                "Clásico plato argentino",
+                2500.0,
+                Collections.emptyList(),
+                List.of(Categoria.PLATO_PRINCIPAL)
+        );
+
+        menu.agregarProducto(principal);
+
+        List<Producto> resultado = menu.filtrarPorCategoria(Categoria.PLATO_PRINCIPAL);
+        assertEquals(1, resultado.size());
+        assertTrue(resultado.contains(principal));
     }
 }

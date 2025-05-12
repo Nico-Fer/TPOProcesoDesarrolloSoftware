@@ -5,17 +5,17 @@ import uade.tpo.modelo.pedido.Pedido;
 public class ListoParaEntregarState implements EstadoPedidoState{
     private Pedido pedido;
     @Override
-    public void AvanzarEstadoPedido() {
-        pedido.SetEstado(new EntregadoState());
+    public void avanzarEstadoPedido() {
+        pedido.setEstado(new EntregadoState());
     }
 
     @Override
-    public String GetNombreEstado() {
+    public String getNombreEstado() {
         return "Listo Para Entregar";
     }
 
     @Override
-    public void SetPedido(Pedido pedido) {
+    public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
 }

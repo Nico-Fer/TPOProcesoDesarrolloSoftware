@@ -1,7 +1,5 @@
 package uade.tpo.modelo.pago;
 
-import java.io.Serializable;
-
 public class TarjetaCredito implements MetodoPago{
     private String numeroTarjeta;
     private String cvv;
@@ -20,7 +18,7 @@ public class TarjetaCredito implements MetodoPago{
     }
 
     @Override
-    public void ProcesarPago(double monto) {
+    public void procesarPago(double monto) {
         System.out.println("Procesando pago de $" + monto + " con tarjeta de crédito.");
     }
 }

@@ -24,8 +24,8 @@ public class ClienteTest {
     void setUp() {
         cliente = new Cliente("Juan", "Pérez", "Calle Falsa 123");
 
-        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList());
-        Producto empanada = new Producto("Empanada", "Carne", 500.0, Collections.emptyList());
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null);
+        Producto empanada = new Producto("Empanada", "Carne", 500.0, Collections.emptyList(), null);
 
         menu = new Menu();
         menu.agregarProducto(pizza);
@@ -43,15 +43,15 @@ public class ClienteTest {
 
     @Test
     void iniciarPedidoAgregaAPedidosDelCliente() {
-        cliente.IniciarPedido();
+        cliente.iniciarPedido();
         assertNotNull(cliente.getPedidos());
         assertEquals(1, cliente.getPedidos().size());
     }
 
     @Test
     void agregarProductoAlPedidoActivoExitosamente() {
-        cliente.IniciarPedido();
-        cliente.AgregarProductoAPedidoActivo(menu, "Pizza");
+        cliente.iniciarPedido();
+        cliente.agregarProductoAPedidoActivo(menu, "Pizza");
 
         Pedido pedido = cliente.getPedidos().get(0);
         assertEquals(1, pedido.getProductos().size());
@@ -61,27 +61,27 @@ public class ClienteTest {
     @Test
     void agregarProductoSinPedidoActivoLanzaExcepcion() {
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.AgregarProductoAPedidoActivo(menu, "Pizza");
+            cliente.agregarProductoAPedidoActivo(menu, "Pizza");
         });
         assertEquals("No hay pedido activo para agregar productos.", ex.getMessage());
     }
 
     @Test
     void agregarProductoInexistenteLanzaExcepcion() {
-        cliente.IniciarPedido();
+        cliente.iniciarPedido();
 
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () -> {
-            cliente.AgregarProductoAPedidoActivo(menu, "Sushi");
+            cliente.agregarProductoAPedidoActivo(menu, "Sushi");
         });
         assertEquals("Producto no encontrado en el menú.", ex.getMessage());
     }
 
     @Test
     void aplicarCuponCorrectamente() {
-        cliente.IniciarPedido();
+        cliente.iniciarPedido();
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
 
-        assertDoesNotThrow(() -> cliente.AplicarCuponACarrito(cupon));
+        assertDoesNotThrow(() -> cliente.aplicarCuponACarrito(cupon));
     }
 
     @Test
@@ -89,7 +89,7 @@ public class ClienteTest {
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
 
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.AplicarCuponACarrito(cupon);
+            cliente.aplicarCuponACarrito(cupon);
         });
 
         assertEquals("No hay pedido activo para aplicar cupón.", ex.getMessage());
@@ -97,14 +97,14 @@ public class ClienteTest {
 
     @Test
     void pagarPedidoFlujoCompleto() {
-        cliente.IniciarPedido();
-        cliente.AgregarProductoAPedidoActivo(menu, "Pizza");
+        cliente.iniciarPedido();
+        cliente.agregarProductoAPedidoActivo(menu, "Pizza");
 
         MetodoPago metodo = new TarjetaCredito("1234567890123456", "123");
 
-        assertDoesNotThrow(() -> cliente.PagarPedido(metodo));
+        assertDoesNotThrow(() -> cliente.pagarPedido(metodo));
 
-        assertThrows(IllegalStateException.class, () -> cliente.AgregarProductoAPedidoActivo(menu, "Pizza"));
+        assertThrows(IllegalStateException.class, () -> cliente.agregarProductoAPedidoActivo(menu, "Pizza"));
     }
 
     @Test
@@ -112,7 +112,7 @@ public class ClienteTest {
         MetodoPago metodo = new TarjetaCredito("1234567890123456", "123");
 
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.PagarPedido(metodo);
+            cliente.pagarPedido(metodo);
         });
 
         assertEquals("No hay pedido activo para pagar.", ex.getMessage());
@@ -120,20 +120,20 @@ public class ClienteTest {
 
     @Test
     void cancelarPedidoActivoCorrectamente() {
-        cliente.IniciarPedido();
-        assertDoesNotThrow(() -> cliente.CancelarPedido());
+        cliente.iniciarPedido();
+        assertDoesNotThrow(() -> cliente.cancelarPedido());
     }
 
     @Test
     void cancelarPedidoDebeEliminarElPedidoActivo() {
-        cliente.IniciarPedido();
-        cliente.CancelarPedido();
+        cliente.iniciarPedido();
+        cliente.cancelarPedido();
 
         Menu menu = new Menu();
-        menu.agregarProducto(new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList()));
+        menu.agregarProducto(new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null));
 
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.AgregarProductoAPedidoActivo(menu, "Pizza");
+            cliente.agregarProductoAPedidoActivo(menu, "Pizza");
         });
 
         assertEquals("No hay pedido activo para agregar productos.", ex.getMessage());
@@ -142,7 +142,7 @@ public class ClienteTest {
     @Test
     void cancelarPedidoSinPedidoActivoDebeLanzarExcepcion() {
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.CancelarPedido();
+            cliente.cancelarPedido();
         });
 
         assertEquals("No hay pedido activo para cancelar.", ex.getMessage());

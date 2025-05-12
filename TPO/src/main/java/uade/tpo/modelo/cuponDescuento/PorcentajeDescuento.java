@@ -11,8 +11,8 @@ public class PorcentajeDescuento implements CuponDescuento{
     }
 
     @Override
-    public double AplicarDescuento(double total) {
-        if (!EsValido()) {
+    public double aplicarDescuento(double total) {
+        if (!esValido()) {
             throw new IllegalStateException("El cupón ya fue usado o no es válido.");
         }
         usado = true;
@@ -20,12 +20,12 @@ public class PorcentajeDescuento implements CuponDescuento{
     }
 
     @Override
-    public boolean EsValido() {
+    public boolean esValido() {
         return !usado;
     }
 
     @Override
-    public String GetCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 }

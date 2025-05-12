@@ -10,7 +10,7 @@ public class Ingrediente {
         this.esAlergenico = esAlergenico;
     }
 
-    public boolean EsAlergenico() {
+    public boolean esAlergenico() {
         return esAlergenico;
     }
 }

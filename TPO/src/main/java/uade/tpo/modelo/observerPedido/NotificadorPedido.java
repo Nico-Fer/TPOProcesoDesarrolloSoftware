@@ -12,13 +12,13 @@ public class NotificadorPedido {
         suscriptores.add(suscriptor);
     }
 
-    public void quitarSuscriptor(ObserverPedido suscriptor) {
-        suscriptores.remove(suscriptor);
-    }
-
     public void notificarSuscriptores(Pedido pedido) {
         for (ObserverPedido o : suscriptores) {
             o.notificarEstado(pedido);
         }
+    }
+
+    public void limpiarSuscriptores() {
+        suscriptores.clear();
     }
 }

@@ -1,5 +1,6 @@
 package uade.tpo.modelo.menu;
 
+import uade.tpo.modelo.enums.Categoria;
 import uade.tpo.modelo.producto.Producto;
 
 import java.util.ArrayList;
@@ -32,4 +33,10 @@ public class Menu {
     public List<Producto> filtrarProductosPorPrecio(double precioMaximo) {
         return productos.stream().filter(producto -> producto.getPrecio() <= precioMaximo).collect(Collectors.toList());
     };
+
+    public List<Producto> filtrarPorCategoria(Categoria categoria) {
+        return productos.stream()
+                .filter(p -> p.perteneceACategoria(categoria))
+                .collect(Collectors.toList());
+    }
 }

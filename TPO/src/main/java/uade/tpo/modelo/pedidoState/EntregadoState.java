@@ -6,17 +6,18 @@ public class EntregadoState implements EstadoPedidoState{
     private Pedido pedido;
 
     @Override
-    public void AvanzarEstadoPedido() {
+    public void avanzarEstadoPedido() {
         throw new IllegalStateException("El pedido ya fue entregado. No puede avanzar más.");
     }
 
     @Override
-    public String GetNombreEstado() {
+    public String getNombreEstado() {
         return "Pedido Entregado";
     }
 
     @Override
-    public void SetPedido(Pedido pedido) {
+    public void setPedido(Pedido pedido) {
         this.pedido = pedido;
+        this.pedido.limpiarSuscriptores();
     }
 }

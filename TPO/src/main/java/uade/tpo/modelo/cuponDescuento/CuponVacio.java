@@ -3,17 +3,17 @@ package uade.tpo.modelo.cuponDescuento;
 public class CuponVacio implements CuponDescuento{
 
     @Override
-    public double AplicarDescuento(double total) {
+    public double aplicarDescuento(double total) {
         return total;
     }
 
     @Override
-    public boolean EsValido() {
+    public boolean esValido() {
         return true;
     }
 
     @Override
-    public String GetCodigo() {
+    public String getCodigo() {
         return "SIN_CUPON";
     }
 }

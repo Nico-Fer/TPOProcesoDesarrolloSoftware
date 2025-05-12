@@ -35,7 +35,8 @@ public class RestauranteFlujoRealTest {
         cliente = new Cliente("Juan", "Pérez", "Av. Siempre Viva 123");
 
         pedido = new Pedido();
-        Producto producto = new Producto("Pizza", "Mozzarella", 1000.0, Collections.emptyList());
+        Producto producto = new Producto("Pizza", "Mozzarella", 1000.0, Collections.emptyList(),
+                null);
         pedido.agregarProducto(producto);
         pedido.asignarMetodoPago(new TarjetaCredito("1234567812345678", "123"));
 

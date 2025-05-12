@@ -21,9 +21,9 @@ public class Pedido {
     private CuponDescuento cupon = new CuponVacio();
     NotificadorPedido notificadorPedido = new NotificadorPedido();
 
-    public void SetEstado(EstadoPedidoState estado) {
+    public void setEstado(EstadoPedidoState estado) {
         this.estadoPedido = estado;
-        this.estadoPedido.SetPedido(this);
+        this.estadoPedido.setPedido(this);
         this.notificadorPedido.notificarSuscriptores(this);
     }
 
@@ -35,8 +35,8 @@ public class Pedido {
         return productos;
     }
 
-    public void AplicarCupon(CuponDescuento cupon) {
-        if (cupon == null || !cupon.EsValido()) {
+    public void aplicarCupon(CuponDescuento cupon) {
+        if (cupon == null || !cupon.esValido()) {
             throw new IllegalArgumentException("Cupón inválido.");
         }
         this.cupon = cupon;
@@ -46,7 +46,7 @@ public class Pedido {
         double total = productos.stream()
                 .mapToDouble(Producto::getPrecio)
                 .sum();
-        return cupon.AplicarDescuento(total);
+        return cupon.aplicarDescuento(total);
     }
 
     public void asignarMetodoPago(MetodoPago metodoPago) {
@@ -61,7 +61,7 @@ public class Pedido {
         if (metodoPago == null) {
             throw new IllegalStateException("No se asignó un método de pago.");
         }
-        metodoPago.ProcesarPago(monto);
+        metodoPago.procesarPago(monto);
     }
 
     public void confirmarPedido() {
@@ -69,26 +69,22 @@ public class Pedido {
             throw new IllegalStateException("El pedido ya fue confirmado.");
         }
         this.numeroOrden = String.format("%05d", contadorOrdenes++);
-        this.SetEstado(new EnEsperaState());
+        this.setEstado(new EnEsperaState());
     }
 
     public void avanzarEstado() {
         if (estadoPedido == null) {
             throw new IllegalStateException("El pedido debe ser confirmado primero.");
         }
-        estadoPedido.AvanzarEstadoPedido();
+        estadoPedido.avanzarEstadoPedido();
     }
 
     public void agregarSuscriptor(ObserverPedido suscriptor) {
         notificadorPedido.agregarSuscriptor(suscriptor);
     }
 
-    public void quitarSuscriptor(ObserverPedido suscriptor) {
-        notificadorPedido.quitarSuscriptor(suscriptor);
-    }
-
-    public EstadoPedidoState getEstado() {
-        return estadoPedido;
+    public void limpiarSuscriptores() {
+        notificadorPedido.limpiarSuscriptores();
     }
 
     public String getNumeroOrden() {
@@ -96,7 +92,7 @@ public class Pedido {
     }
 
     public String getNombreEstado() {
-        return estadoPedido != null ? estadoPedido.GetNombreEstado() : "No confirmado";
+        return estadoPedido != null ? estadoPedido.getNombreEstado() : "No confirmado";
     }
 
 }

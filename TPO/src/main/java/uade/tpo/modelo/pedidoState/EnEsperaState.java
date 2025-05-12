@@ -6,17 +6,17 @@ public class EnEsperaState implements EstadoPedidoState{
     private Pedido pedido;
 
     @Override
-    public void AvanzarEstadoPedido() {
-        pedido.SetEstado(new EnPreparacionState());
+    public void avanzarEstadoPedido() {
+        pedido.setEstado(new EnPreparacionState());
     }
 
     @Override
-    public String GetNombreEstado() {
+    public String getNombreEstado() {
         return "En espera";
     }
 
     @Override
-    public void SetPedido(Pedido pedido) {
+    public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
 }
