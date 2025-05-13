@@ -47,7 +47,7 @@ public class Restaurante {
     public void suscribirPersonalAPedido(Pedido pedido) {
         for (PersonalRestaurante p : personalRestaurante) {
             if (p instanceof Mesero mesero) {
-                pedido.agregarSuscriptor(mesero.crearObserverPedido());
+                pedido.agregarSuscriptor(mesero.suscribirPedido());
             }
         }
     }

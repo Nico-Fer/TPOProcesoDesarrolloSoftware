@@ -9,7 +9,7 @@ public class Mesero extends PersonalRestaurante{
         super(nombre, "Mesero");
     }
 
-    public ObserverPedido crearObserverPedido() {
+    public ObserverPedido suscribirPedido() {
         return new ObserverMesero(this);
     }
 }

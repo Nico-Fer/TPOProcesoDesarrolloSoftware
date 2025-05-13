@@ -78,6 +78,7 @@ public class Cliente {
 
         pedidoActivo.asignarMetodoPago(metodoPago);
         pedidoActivo.pagarPedido();
+        suscribirPedido();
         pedidoActivo = null;
     }
 
