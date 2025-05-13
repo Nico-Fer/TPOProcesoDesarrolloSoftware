@@ -89,16 +89,14 @@ public class PedidoTest {
         MetodoPago metodoPago = new TarjetaCredito("1234567890123456", "123");
         pedido.asignarMetodoPago(metodoPago);
 
-        assertDoesNotThrow(() -> pedido.pagarPedido(5000.0));
+        assertDoesNotThrow(pedido::pagarPedido);
     }
 
     @Test
     public void pagarPedidoSinMetodoPagoAsignadoDebeLanzarExcepcion() {
 
         Pedido pedido = new Pedido();
-        IllegalStateException excepcion = assertThrows(IllegalStateException.class, () -> {
-            pedido.pagarPedido(5000.0);
-        });
+        IllegalStateException excepcion = assertThrows(IllegalStateException.class, pedido::pagarPedido);
 
         assertEquals("No se asignó un método de pago.", excepcion.getMessage());
     }

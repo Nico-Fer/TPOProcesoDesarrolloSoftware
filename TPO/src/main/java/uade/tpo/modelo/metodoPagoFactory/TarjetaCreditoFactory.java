@@ -6,7 +6,7 @@ import uade.tpo.modelo.pago.TarjetaCredito;
 
 public class TarjetaCreditoFactory implements MetodoPagoFactory<TarjetaCreditoDTO>{
     @Override
-    public MetodoPago crearPago(TarjetaCreditoDTO datos) {
+    public MetodoPago crearMetodoPago(TarjetaCreditoDTO datos) {
         if (datos == null) {
             throw new IllegalArgumentException("Los datos de tarjeta no pueden ser nulos.");
         }

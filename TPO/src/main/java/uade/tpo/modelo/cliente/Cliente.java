@@ -3,7 +3,6 @@ package uade.tpo.modelo.cliente;
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
 import uade.tpo.modelo.menu.Menu;
 import uade.tpo.modelo.observerPedido.ObserverCliente;
-import uade.tpo.modelo.observerPedido.ObserverPedido;
 import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedido.Pedido;
 import uade.tpo.modelo.producto.Producto;
@@ -54,11 +53,7 @@ public class Cliente {
         pedidoActivo = null;
     }
 
-    public ObserverPedido crearObserverPedido() {
-        return new ObserverCliente(this);
-    }
-
-    public void agregarProductoAPedidoActivo(Menu menu, String nombreProducto) {
+    public void agregarProductoAPedido(Menu menu, String nombreProducto) {
         if (pedidoActivo == null) {
             throw new IllegalStateException("No hay pedido activo para agregar productos.");
         }
@@ -69,7 +64,7 @@ public class Cliente {
         pedidoActivo.agregarProducto(producto);
     }
 
-    public void aplicarCuponACarrito(CuponDescuento cupon) {
+    public void aplicarCupon(CuponDescuento cupon) {
         if (pedidoActivo == null) {
             throw new IllegalStateException("No hay pedido activo para aplicar cupón.");
         }
@@ -82,7 +77,13 @@ public class Cliente {
         }
 
         pedidoActivo.asignarMetodoPago(metodoPago);
-        pedidoActivo.pagarPedido(pedidoActivo.calcularPrecioTotal());
+        pedidoActivo.pagarPedido();
         pedidoActivo = null;
+    }
+
+    public void suscribirPedido() {
+        if (pedidoActivo != null) {
+            pedidoActivo.agregarSuscriptor(new ObserverCliente(this));
+        }
     }
 }

@@ -4,7 +4,7 @@ import uade.tpo.modelo.pedido.Pedido;
 import uade.tpo.modelo.personalRestaurante.Mesero;
 
 public class ObserverMesero implements ObserverPedido{
-    private Mesero mesero;
+    private final Mesero mesero;
 
     public ObserverMesero(Mesero mesero) {
         this.mesero = mesero;

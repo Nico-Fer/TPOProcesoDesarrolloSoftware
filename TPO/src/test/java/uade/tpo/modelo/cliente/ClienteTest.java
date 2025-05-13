@@ -51,7 +51,7 @@ public class ClienteTest {
     @Test
     void agregarProductoAlPedidoActivoExitosamente() {
         cliente.iniciarPedido();
-        cliente.agregarProductoAPedidoActivo(menu, "Pizza");
+        cliente.agregarProductoAPedido(menu, "Pizza");
 
         Pedido pedido = cliente.getPedidos().get(0);
         assertEquals(1, pedido.getProductos().size());
@@ -61,7 +61,7 @@ public class ClienteTest {
     @Test
     void agregarProductoSinPedidoActivoLanzaExcepcion() {
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.agregarProductoAPedidoActivo(menu, "Pizza");
+            cliente.agregarProductoAPedido(menu, "Pizza");
         });
         assertEquals("No hay pedido activo para agregar productos.", ex.getMessage());
     }
@@ -71,7 +71,7 @@ public class ClienteTest {
         cliente.iniciarPedido();
 
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () -> {
-            cliente.agregarProductoAPedidoActivo(menu, "Sushi");
+            cliente.agregarProductoAPedido(menu, "Sushi");
         });
         assertEquals("Producto no encontrado en el menú.", ex.getMessage());
     }
@@ -81,7 +81,7 @@ public class ClienteTest {
         cliente.iniciarPedido();
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
 
-        assertDoesNotThrow(() -> cliente.aplicarCuponACarrito(cupon));
+        assertDoesNotThrow(() -> cliente.aplicarCupon(cupon));
     }
 
     @Test
@@ -89,7 +89,7 @@ public class ClienteTest {
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
 
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.aplicarCuponACarrito(cupon);
+            cliente.aplicarCupon(cupon);
         });
 
         assertEquals("No hay pedido activo para aplicar cupón.", ex.getMessage());
@@ -98,13 +98,13 @@ public class ClienteTest {
     @Test
     void pagarPedidoFlujoCompleto() {
         cliente.iniciarPedido();
-        cliente.agregarProductoAPedidoActivo(menu, "Pizza");
+        cliente.agregarProductoAPedido(menu, "Pizza");
 
         MetodoPago metodo = new TarjetaCredito("1234567890123456", "123");
 
         assertDoesNotThrow(() -> cliente.pagarPedido(metodo));
 
-        assertThrows(IllegalStateException.class, () -> cliente.agregarProductoAPedidoActivo(menu, "Pizza"));
+        assertThrows(IllegalStateException.class, () -> cliente.agregarProductoAPedido(menu, "Pizza"));
     }
 
     @Test
@@ -133,7 +133,7 @@ public class ClienteTest {
         menu.agregarProducto(new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null));
 
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.agregarProductoAPedidoActivo(menu, "Pizza");
+            cliente.agregarProductoAPedido(menu, "Pizza");
         });
 
         assertEquals("No hay pedido activo para agregar productos.", ex.getMessage());

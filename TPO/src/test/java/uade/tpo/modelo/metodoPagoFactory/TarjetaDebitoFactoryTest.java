@@ -1,7 +1,6 @@
 package uade.tpo.modelo.metodoPagoFactory;
 
 import org.junit.Test;
-import uade.tpo.modelo.dtos.TarjetaCreditoDTO;
 import uade.tpo.modelo.dtos.TarjetaDebitoDTO;
 import uade.tpo.modelo.enums.TipoMetodoPago;
 import uade.tpo.modelo.pago.MetodoPago;
@@ -18,7 +17,7 @@ public class TarjetaDebitoFactoryTest {
         TarjetaDebitoDTO datos = new TarjetaDebitoDTO("6543210987654321", "456");
         MetodoPagoFactory<TarjetaDebitoDTO> factory = (MetodoPagoFactory<TarjetaDebitoDTO>) MetodoPagoFactoryProvider.getFactory(tipoMetodoPago);
 
-        MetodoPago metodoPago = factory.crearPago(datos);
+        MetodoPago metodoPago = factory.crearMetodoPago(datos);
 
         assertNotNull(metodoPago);
         assertInstanceOf(TarjetaDebito.class, metodoPago);;
@@ -29,24 +28,24 @@ public class TarjetaDebitoFactoryTest {
     }
 
     @Test
-    public void crearPagoConDatosNulosDebeFallar() {
+    public void crearMetodoPagoConDatosNulosDebeFallar() {
 
         TarjetaCreditoFactory factory = new TarjetaCreditoFactory();
 
         IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> {
-            MetodoPago metodoPago = factory.crearPago(null);
+            MetodoPago metodoPago = factory.crearMetodoPago(null);
         });
 
         assertEquals("Los datos de tarjeta no pueden ser nulos.", excepcion.getMessage());
     }
 
     @Test
-    public void crearPagoSinCvvDebeFallar() {
+    public void crearMetodoPagoSinCvvDebeFallar() {
         TarjetaDebitoFactory factory = new TarjetaDebitoFactory();
         TarjetaDebitoDTO datos = new TarjetaDebitoDTO("1234567890123456", "");
 
         IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> {
-            MetodoPago metodoPago = factory.crearPago(datos);
+            MetodoPago metodoPago = factory.crearMetodoPago(datos);
         });
 
         assertEquals("El CVV debe tener exactamente 3 dígitos.", excepcion.getMessage());

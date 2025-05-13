@@ -18,7 +18,7 @@ public class Pedido {
     private EstadoPedidoState estadoPedido;
     private String numeroOrden;
     private static int contadorOrdenes = 1;
-    private CuponDescuento cupon = new CuponVacio();
+    private CuponDescuento cuponDescuento = new CuponVacio();
     NotificadorPedido notificadorPedido = new NotificadorPedido();
 
     public void setEstado(EstadoPedidoState estado) {
@@ -39,14 +39,14 @@ public class Pedido {
         if (cupon == null || !cupon.esValido()) {
             throw new IllegalArgumentException("Cupón inválido.");
         }
-        this.cupon = cupon;
+        this.cuponDescuento = cupon;
     }
 
     public double calcularPrecioTotal() {
         double total = productos.stream()
                 .mapToDouble(Producto::getPrecio)
                 .sum();
-        return cupon.aplicarDescuento(total);
+        return cuponDescuento.aplicarDescuento(total);
     }
 
     public void asignarMetodoPago(MetodoPago metodoPago) {
@@ -57,11 +57,11 @@ public class Pedido {
         return metodoPago;
     }
 
-    public void pagarPedido(double monto) {
+    public void pagarPedido() {
         if (metodoPago == null) {
             throw new IllegalStateException("No se asignó un método de pago.");
         }
-        metodoPago.procesarPago(monto);
+        metodoPago.procesarPago(this.calcularPrecioTotal());
     }
 
     public void confirmarPedido() {

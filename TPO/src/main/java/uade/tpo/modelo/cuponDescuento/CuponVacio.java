@@ -11,9 +11,4 @@ public class CuponVacio implements CuponDescuento{
     public boolean esValido() {
         return true;
     }
-
-    @Override
-    public String getCodigo() {
-        return "SIN_CUPON";
-    }
 }

@@ -5,37 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/factura/CorreoFactura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/factura/Factura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverFacturaCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Class DiagramStatePattern.asta.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/CuponDescuento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/CuponDescuento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/CuponVacio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/CuponVacio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/PorcentajeDescuento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/PorcentajeDescuento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/enums/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/enums/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/MetodoPagoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/MetodoPagoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/TarjetaCreditoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/TarjetaCreditoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/TarjetaDebitoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/TarjetaDebitoFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/NotificadorPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/NotificadorPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MetodoPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MetodoPago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaCredito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaDebito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaDebito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverMesero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/observerPedido/ObserverMesero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnEsperaState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnEsperaState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnPreparacionState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnPreparacionState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EntregadoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EntregadoState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ListoParaEntregarState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ListoParaEntregarState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/personalRestaurante/PersonalRestaurante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/personalRestaurante/PersonalRestaurante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Ingrediente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Ingrediente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/producto/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/CuponDescuento/CuponDescuentoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/CuponDescuento/CuponDescuentoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/Menu/MenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/Menu/MenuTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pago/PagoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pago/PagoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/metodoPagoFactory/TarjetaCreditoFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/metodoPagoFactory/TarjetaCreditoFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/metodoPagoFactory/TarjetaDebitoFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/metodoPagoFactory/TarjetaDebitoFactoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/producto/ProductoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/producto/ProductoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteFlujoRealTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteFlujoRealTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +253,8 @@
       <workItem from="1745844304562" duration="19606000" />
       <workItem from="1745929316718" duration="2749000" />
       <workItem from="1746104876018" duration="16317000" />
-      <workItem from="1747077199338" duration="1861000" />
+      <workItem from="1747077199338" duration="2463000" />
+      <workItem from="1747139529196" duration="6993000" />
     </task>
     <servers />
   </component>

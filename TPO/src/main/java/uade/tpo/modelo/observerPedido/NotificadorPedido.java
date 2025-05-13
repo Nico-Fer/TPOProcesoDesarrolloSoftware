@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NotificadorPedido {
-    private List<ObserverPedido> suscriptores = new ArrayList<>();
+    private final List<ObserverPedido> suscriptores = new ArrayList<>();
 
     public void agregarSuscriptor(ObserverPedido suscriptor) {
         suscriptores.add(suscriptor);

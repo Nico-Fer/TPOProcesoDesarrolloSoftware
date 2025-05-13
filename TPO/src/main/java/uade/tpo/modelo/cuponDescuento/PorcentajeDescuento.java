@@ -23,9 +23,4 @@ public class PorcentajeDescuento implements CuponDescuento{
     public boolean esValido() {
         return !usado;
     }
-
-    @Override
-    public String getCodigo() {
-        return codigo;
-    }
 }

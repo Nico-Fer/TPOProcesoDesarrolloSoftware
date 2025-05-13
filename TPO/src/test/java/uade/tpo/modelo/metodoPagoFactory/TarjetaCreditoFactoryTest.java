@@ -17,7 +17,7 @@ public class TarjetaCreditoFactoryTest {
         TarjetaCreditoDTO datos = new TarjetaCreditoDTO("1234567890123456", "123");
         MetodoPagoFactory<TarjetaCreditoDTO> factory = (MetodoPagoFactory<TarjetaCreditoDTO>) MetodoPagoFactoryProvider.getFactory(tipoMetodoPago);
 
-        MetodoPago metodoPago = factory.crearPago(datos);
+        MetodoPago metodoPago = factory.crearMetodoPago(datos);
 
         assertNotNull(metodoPago);
         assertInstanceOf(TarjetaCredito.class, metodoPago);
@@ -28,23 +28,23 @@ public class TarjetaCreditoFactoryTest {
     }
 
     @Test
-    public void crearPagoConDatosNulosDebeFallar() {
+    public void crearMetodoPagoConDatosNulosDebeFallar() {
         TarjetaCreditoFactory factory = new TarjetaCreditoFactory();
 
         IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> {
-            MetodoPago metodoPago = factory.crearPago(null);
+            MetodoPago metodoPago = factory.crearMetodoPago(null);
         });
 
         assertEquals("Los datos de tarjeta no pueden ser nulos.", excepcion.getMessage());
     }
 
     @Test
-    public void crearPagoSinCvvDebeFallar() {
+    public void crearMetodoPagoSinCvvDebeFallar() {
         TarjetaCreditoFactory factory = new TarjetaCreditoFactory();
         TarjetaCreditoDTO datos = new TarjetaCreditoDTO("1234567890123456", "");
 
         IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> {
-            MetodoPago metodoPago = factory.crearPago(datos);
+            MetodoPago metodoPago = factory.crearMetodoPago(datos);
         });
 
         assertEquals("El CVV debe tener exactamente 3 dígitos.", excepcion.getMessage());

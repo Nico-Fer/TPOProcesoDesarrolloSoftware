@@ -5,7 +5,7 @@ import uade.tpo.modelo.pedido.Pedido;
 
 public class ObserverCliente implements ObserverPedido {
 
-    private Cliente cliente;
+    private final Cliente cliente;
 
     public ObserverCliente(Cliente cliente) {
         this.cliente = cliente;
