@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/MobileStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/PlataformaStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/TotemStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponStrategy/CuponSinValidarStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponStrategy/CuponStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponStrategy/CuponValidadoStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/notificacionStrategy/NotificacionActivaStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/notificacionStrategy/NotificacionInactivaStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/notificacionStrategy/NotificacionStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Carrito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/plataformaStrategy/PlataformaStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/dtos/GooglePayDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/dtos/MercadoPagoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/EfectivoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/GooglePayFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/MercadoPagoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/Efectivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/GooglePay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MercadoPago.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/PorcentajeDescuento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/PorcentajeDescuento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/CuponDescuento/CuponDescuentoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/CuponDescuento/CuponDescuentoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteFlujoRealTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteFlujoRealTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/TotemStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/TotemStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/enums/TipoMetodoPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/enums/TipoMetodoPago.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/MetodoPagoFactoryProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/metodoPagoFactory/MetodoPagoFactoryProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/plataformaStrategy/PlataformaStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/plataformaStrategy/PlataformaStrategyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,22 +147,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in TPO">
-    <configuration name="ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.cliente.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.cliente" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.cliente.ClienteTest" />
-      <option name="METHOD_NAME" value="cancelarPedidoDebeEliminarElPedidoActivo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
@@ -181,6 +158,22 @@
       <option name="PACKAGE_NAME" value="uade.tpo.modelo.cliente" />
       <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.cliente.ClienteTest" />
       <option name="METHOD_NAME" value="cancelarPedidoSinPedidoActivoDebeLanzarExcepcion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MercadoPagoFactoryTest.mercadoPagoFactoryCreaPagoValido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.metodoPagoFactory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.metodoPagoFactory" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.metodoPagoFactory.MercadoPagoFactoryTest" />
+      <option name="METHOD_NAME" value="mercadoPagoFactoryCreaPagoValido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -228,10 +221,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in TPO" />
+        <item itemvalue="JUnit.MercadoPagoFactoryTest.mercadoPagoFactoryCreaPagoValido" />
         <item itemvalue="JUnit.PlataformaStrategyTest.sePuedeCrearPedidoConTotemStrategy" />
         <item itemvalue="JUnit.RestauranteFlujoRealTest" />
         <item itemvalue="JUnit.ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion" />
-        <item itemvalue="JUnit.ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +255,7 @@
       <workItem from="1748615676962" duration="1478000" />
       <workItem from="1748692943814" duration="2771000" />
       <workItem from="1748730557757" duration="3200000" />
-      <workItem from="1749209346046" duration="3997000" />
+      <workItem from="1749209346046" duration="6792000" />
     </task>
     <servers />
   </component>

@@ -75,6 +75,6 @@ public class PlataformaStrategyTest {
         double total = pedido.calcularPrecioTotal();
         assertEquals(450.0, total, 0.01);
     }
-    
+
 }
 
