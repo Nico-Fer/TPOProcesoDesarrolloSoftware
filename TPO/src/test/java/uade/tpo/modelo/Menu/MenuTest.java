@@ -22,7 +22,8 @@ public class MenuTest {
                 "Pizza clásica",
                 1500.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
 
         menu.agregarProducto(pizza);
@@ -40,14 +41,16 @@ public class MenuTest {
                 "Pizza común",
                 1500.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
         Producto empanada = new Producto(
                 "Empanada",
                 "Empanada de carne",
                 800.0,
                 Collections.emptyList(),
-                null
+                null,
+                15f
         );
         menu.agregarProducto(pizza);
         menu.agregarProducto(empanada);
@@ -68,7 +71,8 @@ public class MenuTest {
                 "Pizza napolitana",
                 1600.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
         menu.agregarProducto(pizza);
 
@@ -87,7 +91,8 @@ public class MenuTest {
                 "Hamburguesa con queso",
                 1800.0,
                 Collections.emptyList(),
-                null
+                null,
+                10f
         );
         menu.agregarProducto(hamburguesa);
 
@@ -105,21 +110,24 @@ public class MenuTest {
                 "Botella de agua",
                 500.0,
                 Collections.emptyList(),
-                null
+                null,
+                0f
         );
         Producto pizza = new Producto(
                 "Pizza",
                 "Pizza especial",
                 2000.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
         Producto hamburguesa = new Producto(
                 "Hamburguesa",
                 "Hamburguesa con queso",
                 1000.0,
                 Collections.emptyList(),
-                null
+                null,
+                10f
         );
         menu.agregarProducto(agua);
         menu.agregarProducto(pizza);
@@ -140,14 +148,16 @@ public class MenuTest {
                 "Rolls de salmón",
                 3000.0,
                 Collections.emptyList(),
-                null
+                null,
+                40f
         );
         Producto lomo = new Producto(
                 "Lomo",
                 "Lomo a la pimienta",
                 3500.0,
                 Collections.emptyList(),
-                null
+                null,
+                30f
         );
         menu.agregarProducto(sushi);
         menu.agregarProducto(lomo);
@@ -166,7 +176,8 @@ public class MenuTest {
                 "Pizza común",
                 1500.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
 
 
@@ -185,7 +196,8 @@ public class MenuTest {
                 "Pan tostado con tomate",
                 800.0,
                 Collections.emptyList(),
-                List.of(Categoria.ENTRADA)
+                List.of(Categoria.ENTRADA),
+                5f
         );
 
         menu.agregarProducto(entrada);
@@ -204,7 +216,8 @@ public class MenuTest {
                 "Clásico plato argentino",
                 2500.0,
                 Collections.emptyList(),
-                List.of(Categoria.PLATO_PRINCIPAL)
+                List.of(Categoria.PLATO_PRINCIPAL),
+                15f
         );
 
         menu.agregarProducto(principal);

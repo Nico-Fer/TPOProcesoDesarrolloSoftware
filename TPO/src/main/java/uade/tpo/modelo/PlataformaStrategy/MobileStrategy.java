@@ -36,4 +36,9 @@ public class MobileStrategy implements PlataformaStrategy {
     public void limpiarObservers() {
         notificacionStrategy.limpiarObservers();
     }
+
+    @Override
+    public Float calcularRutaPedido() {
+        return 15f;
+    }
 }

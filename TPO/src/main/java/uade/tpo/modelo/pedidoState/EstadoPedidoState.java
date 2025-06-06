@@ -6,4 +6,5 @@ public interface EstadoPedidoState {
     void avanzarEstadoPedido();
     String getNombreEstado();
     void setPedido(Pedido pedido);
+    Float calcularTiempoRestantePedido(int cantidadPedidos);
 }

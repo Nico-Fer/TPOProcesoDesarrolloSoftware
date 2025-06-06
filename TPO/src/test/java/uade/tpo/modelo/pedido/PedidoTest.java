@@ -17,8 +17,7 @@ public class PedidoTest {
     public void agregarProductoAlPedidoCorrectamente() {
 
         Pedido pedido = new Pedido(new MobileStrategy());
-        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(), null, 20f);
 
         pedido.agregarProducto(pizza);
 
@@ -30,10 +29,8 @@ public class PedidoTest {
     public void obtenerListaDeProductosDelPedido() {
 
         Pedido pedido = new Pedido(new MobileStrategy());
-        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(),
-                null);
-        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(), null, 20f);
+        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(), null, 15f);
         pedido.agregarProducto(pizza);
         pedido.agregarProducto(empanada);
 
@@ -48,10 +45,8 @@ public class PedidoTest {
     public void calcularPrecioTotalDeProductos() {
 
         Pedido pedido = new Pedido(new MobileStrategy());
-        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(),
-                null);
-        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(), null, 20f);
+        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(), null, 15f);
         pedido.agregarProducto(pizza);
         pedido.agregarProducto(empanada);
 

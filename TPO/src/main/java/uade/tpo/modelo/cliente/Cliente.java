@@ -6,6 +6,7 @@ import uade.tpo.modelo.menu.Menu;
 import uade.tpo.modelo.observerPedido.ObserverCliente;
 import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedido.Pedido;
+import uade.tpo.modelo.pedidoController.PedidoController;
 import uade.tpo.modelo.producto.Producto;
 
 import java.util.ArrayList;
@@ -40,8 +41,10 @@ public class Cliente {
         return pedidos;
     }
 
-    public void iniciarPedido(PlataformaStrategy strategy) {
-        Pedido pedido = new Pedido(strategy);
+    public Pedido getPedidoActivo() { return pedidoActivo; }
+
+    public void iniciarPedido(PlataformaStrategy strategy, PedidoController controller) {
+        Pedido pedido = controller.crearPedido(strategy);
         this.pedidoActivo = pedido;
         pedidos.add(pedido);
     }

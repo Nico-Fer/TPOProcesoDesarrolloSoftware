@@ -34,4 +34,9 @@ public class TotemStrategy implements PlataformaStrategy{
 
     @Override
     public void limpiarObservers() { notificacionStrategy.limpiarObservers(); }
+
+    @Override
+    public Float calcularRutaPedido() {
+        return 0f;
+    }
 }

@@ -20,4 +20,9 @@ public class EntregadoState implements EstadoPedidoState{
         this.pedido = pedido;
         this.pedido.limpiarSuscriptores();
     }
+
+    @Override
+    public Float calcularTiempoRestantePedido(int cantidadPedidos) {
+        return 0f;
+    }
 }

@@ -11,4 +11,6 @@ public interface PlataformaStrategy {
     void agregarObserver(ObserverPedido observer);
     void notificarCambioEstado(Pedido pedido);
     void limpiarObservers();
+
+    Float calcularRutaPedido();
 }

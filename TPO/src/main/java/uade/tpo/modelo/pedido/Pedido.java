@@ -9,8 +9,10 @@ import uade.tpo.modelo.pedidoState.EstadoPedidoState;
 import uade.tpo.modelo.producto.Producto;
 
 import java.util.List;
+import java.util.UUID;
 
 public class Pedido {
+    private final String id = UUID.randomUUID().toString();
     private MetodoPago metodoPago;
     private EstadoPedidoState estadoPedido;
     private String numeroOrden;
@@ -26,6 +28,14 @@ public class Pedido {
         this.estadoPedido = estado;
         this.estadoPedido.setPedido(this);
         this.plataformaStrategy.notificarCambioEstado(this);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public PlataformaStrategy getPlataformaStrategy() {
+        return plataformaStrategy;
     }
 
     public void agregarProducto(Producto producto) {
@@ -68,6 +78,8 @@ public class Pedido {
         this.setEstado(new EnEsperaState());
     }
 
+    public EstadoPedidoState getEstado() { return estadoPedido;}
+
     public void avanzarEstado() {
         if (estadoPedido == null) {
             throw new IllegalStateException("El pedido debe ser confirmado primero.");
@@ -89,6 +101,10 @@ public class Pedido {
 
     public String getNombreEstado() {
         return estadoPedido != null ? estadoPedido.getNombreEstado() : "No confirmado";
+    }
+
+    public Float calcularTiempoRestante(int cantidadPedidos) {
+        return estadoPedido.calcularTiempoRestantePedido(cantidadPedidos);
     }
 
 }

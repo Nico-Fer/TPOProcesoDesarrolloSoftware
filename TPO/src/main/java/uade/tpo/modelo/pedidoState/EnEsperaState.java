@@ -19,4 +19,10 @@ public class EnEsperaState implements EstadoPedidoState{
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
+
+    @Override
+    public Float calcularTiempoRestantePedido(int cantidadPedidos) {
+        if (cantidadPedidos < 10) return 5.0f;
+        return (cantidadPedidos / 10) * 20.0f;
+    }
 }

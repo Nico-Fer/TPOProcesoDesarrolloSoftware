@@ -10,6 +10,7 @@ import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pago.TarjetaCredito;
 import uade.tpo.modelo.pedido.Pedido;
 import uade.tpo.modelo.producto.Producto;
+import uade.tpo.modelo.restaurante.Restaurante;
 
 import java.util.Collections;
 
@@ -20,17 +21,19 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ClienteTest {
     private Cliente cliente;
     private Menu menu;
+    private Restaurante restaurante;
 
     @BeforeEach
     void setUp() {
         cliente = new Cliente("Juan", "Pérez", "Calle Falsa 123");
 
-        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null);
-        Producto empanada = new Producto("Empanada", "Carne", 500.0, Collections.emptyList(), null);
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 15f);
+        Producto empanada = new Producto("Empanada", "Carne", 500.0, Collections.emptyList(), null, 15f);
 
         menu = new Menu();
         menu.agregarProducto(pizza);
         menu.agregarProducto(empanada);
+        restaurante = new Restaurante("La Pizzería", menu);
     }
 
     @Test
@@ -44,14 +47,14 @@ public class ClienteTest {
 
     @Test
     void iniciarPedidoAgregaAPedidosDelCliente() {
-        cliente.iniciarPedido(new MobileStrategy());
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
         assertNotNull(cliente.getPedidos());
         assertEquals(1, cliente.getPedidos().size());
     }
 
     @Test
     void agregarProductoAlPedidoActivoExitosamente() {
-        cliente.iniciarPedido(new MobileStrategy());
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
         cliente.agregarProductoAPedido(menu, "Pizza");
 
         Pedido pedido = cliente.getPedidos().get(0);
@@ -69,7 +72,7 @@ public class ClienteTest {
 
     @Test
     void agregarProductoInexistenteLanzaExcepcion() {
-        cliente.iniciarPedido(new MobileStrategy());
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
 
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () -> {
             cliente.agregarProductoAPedido(menu, "Sushi");
@@ -79,7 +82,7 @@ public class ClienteTest {
 
     @Test
     void aplicarCuponCorrectamente() {
-        cliente.iniciarPedido(new MobileStrategy());
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
 
         assertDoesNotThrow(() -> cliente.aplicarCupon(cupon));
@@ -98,7 +101,7 @@ public class ClienteTest {
 
     @Test
     void pagarPedidoFlujoCompleto() {
-        cliente.iniciarPedido(new MobileStrategy());
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
         cliente.agregarProductoAPedido(menu, "Pizza");
 
         MetodoPago metodo = new TarjetaCredito("1234567890123456", "123");
@@ -121,17 +124,17 @@ public class ClienteTest {
 
     @Test
     void cancelarPedidoActivoCorrectamente() {
-        cliente.iniciarPedido(new MobileStrategy());
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
         assertDoesNotThrow(() -> cliente.cancelarPedido());
     }
 
     @Test
     void cancelarPedidoDebeEliminarElPedidoActivo() {
-        cliente.iniciarPedido(new MobileStrategy());
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
         cliente.cancelarPedido();
 
         Menu menu = new Menu();
-        menu.agregarProducto(new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null));
+        menu.agregarProducto(new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 20f));
 
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
             cliente.agregarProductoAPedido(menu, "Pizza");

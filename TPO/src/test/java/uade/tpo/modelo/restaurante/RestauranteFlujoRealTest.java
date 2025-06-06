@@ -34,10 +34,10 @@ public class RestauranteFlujoRealTest {
         restaurante.registrarPersonal(mesero);
 
         cliente = new Cliente("Juan", "Pérez", "Av. Siempre Viva 123");
+        cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
 
-        pedido = new Pedido(new MobileStrategy());
-        Producto producto = new Producto("Pizza", "Mozzarella", 1000.0, Collections.emptyList(),
-                null);
+        pedido = cliente.getPedidoActivo();
+        Producto producto = new Producto("Pizza", "Mozzarella", 1000.0, Collections.emptyList(), null, 20f);
         pedido.agregarProducto(producto);
         pedido.asignarMetodoPago(new TarjetaCredito("1234567812345678", "123"));
 
@@ -51,7 +51,7 @@ public class RestauranteFlujoRealTest {
             }
         });
 
-        restaurante.suscribirPersonalAPedido(pedido);
+        restaurante.suscribirPersonalAPedido(pedido.getId());
         pedido.agregarSuscriptor(new ObserverPedido() {
             @Override
             public void notificarEstado(Pedido p) {

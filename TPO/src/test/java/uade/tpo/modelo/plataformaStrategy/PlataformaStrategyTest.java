@@ -33,8 +33,7 @@ public class PlataformaStrategyTest {
     public void totemPermiteAplicarCuponSinValidar() {
         PlataformaStrategy estrategia = new TotemStrategy();
         Pedido pedido = new Pedido(estrategia);
-        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 20f);
         pedido.agregarProducto(pizza);
 
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
@@ -51,8 +50,7 @@ public class PlataformaStrategyTest {
     public void mobileRechazaCuponInvalido() {
         PlataformaStrategy estrategia = new MobileStrategy();
         Pedido pedido = new Pedido(estrategia);
-        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 20f);
         pedido.agregarProducto(pizza);
 
         CuponDescuento cupon = new PorcentajeDescuento("XYZ", 0.5);
@@ -65,8 +63,7 @@ public class PlataformaStrategyTest {
     public void mobileAplicaCuponValidoCorrectamente() {
         PlataformaStrategy estrategia = new MobileStrategy();
         Pedido pedido = new Pedido(estrategia);
-        Producto pizza = new Producto("Pizza", "Muzzarella", 500.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Muzzarella", 500.0, Collections.emptyList(), null, 20f);
         pedido.agregarProducto(pizza);
 
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);

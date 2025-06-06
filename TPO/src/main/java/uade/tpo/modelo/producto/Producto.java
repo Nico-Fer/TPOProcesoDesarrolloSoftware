@@ -13,13 +13,15 @@ public class Producto {
     private double precio;
     private List<Ingrediente> ingredientes;
     private List<Categoria> categorias;
+    private Float tiempoPreparacion;
 
-    public Producto(String nombre, String descripcion, double precio, List<Ingrediente> ingredientes, List<Categoria> categorias) {
+    public Producto(String nombre, String descripcion, double precio, List<Ingrediente> ingredientes, List<Categoria> categorias, Float tiempoPreparacion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.ingredientes = Objects.requireNonNullElseGet(ingredientes, ArrayList::new);
         this.categorias = Objects.requireNonNullElseGet(categorias, ArrayList::new);
+        this.tiempoPreparacion = tiempoPreparacion;
     }
 
     public String getNombre() {
@@ -36,6 +38,10 @@ public class Producto {
 
     public List<Ingrediente> getIngredientes() {
         return ingredientes;
+    }
+
+    public Float getTiempoPreparacion() {
+        return tiempoPreparacion;
     }
 
     public boolean tieneIngredientesAlergenicos() {

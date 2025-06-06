@@ -18,4 +18,9 @@ public class ListoParaEntregarState implements EstadoPedidoState{
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
+
+    @Override
+    public Float calcularTiempoRestantePedido(int cantidadPedidos) {
+        return pedido.getPlataformaStrategy().calcularRutaPedido();
+    }
 }

@@ -17,26 +17,22 @@ public class CuponDescuentoTest {
     @Test
     public void aplicarCuponPorcentajeYCalcularTotal() {
         Pedido pedido = new Pedido(new MobileStrategy());
-        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(),
-                null);
-        Producto empanada = new Producto("Empanada", "Carne", 500.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(), null, 20f);
+        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(), null, 15f);
         pedido.agregarProducto(pizza);
         pedido.agregarProducto(empanada);
 
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
         pedido.setCupon(cupon);
         double total = pedido.calcularPrecioTotal();
-        assertEquals(1350.0, total, 0.01);
+        assertEquals(2070.0, total, 0.01);
     }
 
     @Test
     public void aplicarCuponInvalidoLanzaExcepcion() {
         Pedido pedido = new Pedido(new MobileStrategy());
-        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(),
-                null);
-        Producto empanada = new Producto("Empanada", "Carne", 500.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(), null, 20f);
+        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(), null, 15f);
         pedido.agregarProducto(pizza);
         pedido.agregarProducto(empanada);
 
@@ -52,16 +48,14 @@ public class CuponDescuentoTest {
     @Test
     public void cuponVacioNoModificaElTotal() {
         Pedido pedido = new Pedido(new MobileStrategy());
-        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(),
-                null);
-        Producto empanada = new Producto("Empanada", "Carne", 500.0, Collections.emptyList(),
-                null);
+        Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(), null, 20f);
+        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(), null, 15f);
         pedido.agregarProducto(pizza);
         pedido.agregarProducto(empanada);
 
         CuponDescuento cupon = new CuponVacio();
         pedido.setCupon(cupon);
         double total = pedido.calcularPrecioTotal();
-        assertEquals(1500.0, total);
+        assertEquals(2300.0, total);
     }
 }

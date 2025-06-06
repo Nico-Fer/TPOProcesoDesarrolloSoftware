@@ -40,7 +40,8 @@ public class RestauranteTest {
                 "Pizza de muzzarella",
                 1500.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
         menu.agregarProducto(pizza);
         Restaurante restaurante = new Restaurante("Pizzería Central", menu);
@@ -72,7 +73,8 @@ public class RestauranteTest {
                 "Pizza vieja sin queso",
                 1200.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
         menuViejo.agregarProducto(pizzaVieja);
 
@@ -84,7 +86,8 @@ public class RestauranteTest {
                 "Pizza moderna con ingredientes premium",
                 2500.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
         menuNuevo.agregarProducto(pizzaNueva);
 
@@ -104,7 +107,8 @@ public class RestauranteTest {
                 "Pizza vieja sin queso",
                 1200.0,
                 Collections.emptyList(),
-                null
+                null,
+                20f
         );
         menuViejo.agregarProducto(pizzaVieja);
 

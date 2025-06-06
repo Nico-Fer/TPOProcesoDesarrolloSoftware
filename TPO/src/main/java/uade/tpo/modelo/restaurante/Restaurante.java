@@ -2,6 +2,7 @@ package uade.tpo.modelo.restaurante;
 
 import uade.tpo.modelo.menu.Menu;
 import uade.tpo.modelo.pedido.Pedido;
+import uade.tpo.modelo.pedidoController.PedidoController;
 import uade.tpo.modelo.personalRestaurante.Mesero;
 import uade.tpo.modelo.personalRestaurante.PersonalRestaurante;
 
@@ -14,11 +15,12 @@ public class Restaurante {
     private String nombre;
     private Menu menu;
     private List<PersonalRestaurante> personalRestaurante = new ArrayList<>();
+    private PedidoController pedidoController;
 
     public Restaurante(String nombre, Menu menu) {
         this.nombre = nombre;
         this.menu = Objects.requireNonNullElseGet(menu, Menu::new);
-
+        this.pedidoController = new PedidoController(this);
     }
 
     public String getNombre() {
@@ -44,10 +46,22 @@ public class Restaurante {
         }
     }
 
-    public void suscribirPersonalAPedido(Pedido pedido) {
+    public PedidoController getPedidoController() {
+        return pedidoController;
+    }
+
+    public Float calcularTiempoRestantePedido(String idPedido) {
+        return pedidoController.calcularTiempoRestante(idPedido);
+    }
+
+    public void avanzarEstadoPedido(String idPedido) {
+        pedidoController.avanzarEstadoPedido(idPedido);
+    }
+
+    public void suscribirPersonalAPedido(String idPedido) {
         for (PersonalRestaurante p : personalRestaurante) {
             if (p instanceof Mesero mesero) {
-                pedido.agregarSuscriptor(mesero.suscribirPedido());
+                pedidoController.agregarSuscriptor(idPedido, mesero.suscribirPedido());
             }
         }
     }
