@@ -2,6 +2,7 @@ package uade.tpo.modelo.cliente;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uade.tpo.modelo.PlataformaStrategy.MobileStrategy;
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
 import uade.tpo.modelo.cuponDescuento.PorcentajeDescuento;
 import uade.tpo.modelo.menu.Menu;
@@ -43,14 +44,14 @@ public class ClienteTest {
 
     @Test
     void iniciarPedidoAgregaAPedidosDelCliente() {
-        cliente.iniciarPedido();
+        cliente.iniciarPedido(new MobileStrategy());
         assertNotNull(cliente.getPedidos());
         assertEquals(1, cliente.getPedidos().size());
     }
 
     @Test
     void agregarProductoAlPedidoActivoExitosamente() {
-        cliente.iniciarPedido();
+        cliente.iniciarPedido(new MobileStrategy());
         cliente.agregarProductoAPedido(menu, "Pizza");
 
         Pedido pedido = cliente.getPedidos().get(0);
@@ -68,7 +69,7 @@ public class ClienteTest {
 
     @Test
     void agregarProductoInexistenteLanzaExcepcion() {
-        cliente.iniciarPedido();
+        cliente.iniciarPedido(new MobileStrategy());
 
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () -> {
             cliente.agregarProductoAPedido(menu, "Sushi");
@@ -78,7 +79,7 @@ public class ClienteTest {
 
     @Test
     void aplicarCuponCorrectamente() {
-        cliente.iniciarPedido();
+        cliente.iniciarPedido(new MobileStrategy());
         CuponDescuento cupon = new PorcentajeDescuento("DESC10", 0.1);
 
         assertDoesNotThrow(() -> cliente.aplicarCupon(cupon));
@@ -97,7 +98,7 @@ public class ClienteTest {
 
     @Test
     void pagarPedidoFlujoCompleto() {
-        cliente.iniciarPedido();
+        cliente.iniciarPedido(new MobileStrategy());
         cliente.agregarProductoAPedido(menu, "Pizza");
 
         MetodoPago metodo = new TarjetaCredito("1234567890123456", "123");
@@ -120,13 +121,13 @@ public class ClienteTest {
 
     @Test
     void cancelarPedidoActivoCorrectamente() {
-        cliente.iniciarPedido();
+        cliente.iniciarPedido(new MobileStrategy());
         assertDoesNotThrow(() -> cliente.cancelarPedido());
     }
 
     @Test
     void cancelarPedidoDebeEliminarElPedidoActivo() {
-        cliente.iniciarPedido();
+        cliente.iniciarPedido(new MobileStrategy());
         cliente.cancelarPedido();
 
         Menu menu = new Menu();

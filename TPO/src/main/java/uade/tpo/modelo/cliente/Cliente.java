@@ -1,5 +1,6 @@
 package uade.tpo.modelo.cliente;
 
+import uade.tpo.modelo.PlataformaStrategy.PlataformaStrategy;
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
 import uade.tpo.modelo.menu.Menu;
 import uade.tpo.modelo.observerPedido.ObserverCliente;
@@ -39,8 +40,8 @@ public class Cliente {
         return pedidos;
     }
 
-    public void iniciarPedido() {
-        Pedido pedido = new Pedido();
+    public void iniciarPedido(PlataformaStrategy strategy) {
+        Pedido pedido = new Pedido(strategy);
         this.pedidoActivo = pedido;
         pedidos.add(pedido);
     }
@@ -68,7 +69,7 @@ public class Cliente {
         if (pedidoActivo == null) {
             throw new IllegalStateException("No hay pedido activo para aplicar cupón.");
         }
-        this.pedidoActivo.aplicarCupon(cupon);
+        this.pedidoActivo.setCupon(cupon);
     }
 
     public void pagarPedido(MetodoPago metodoPago) {

@@ -2,6 +2,7 @@ package uade.tpo.modelo.restaurante;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uade.tpo.modelo.PlataformaStrategy.MobileStrategy;
 import uade.tpo.modelo.cliente.Cliente;
 import uade.tpo.modelo.menu.Menu;
 import uade.tpo.modelo.observerPedido.ObserverPedido;
@@ -34,7 +35,7 @@ public class RestauranteFlujoRealTest {
 
         cliente = new Cliente("Juan", "Pérez", "Av. Siempre Viva 123");
 
-        pedido = new Pedido();
+        pedido = new Pedido(new MobileStrategy());
         Producto producto = new Producto("Pizza", "Mozzarella", 1000.0, Collections.emptyList(),
                 null);
         pedido.agregarProducto(producto);

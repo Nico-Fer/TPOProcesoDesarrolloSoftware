@@ -2,6 +2,7 @@ package uade.tpo.modelo.pedidoStateTest;
 
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import uade.tpo.modelo.PlataformaStrategy.MobileStrategy;
 import uade.tpo.modelo.pedido.Pedido;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,14 +11,14 @@ public class PedidoStateTest {
 
     @Test
     public void ConfirmarPedidoDebeAsignarEstadoEnEspera() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         pedido.confirmarPedido();
         assertEquals("En espera", pedido.getNombreEstado());
     }
 
     @Test
     public void avanzarDeEnEsperaACorrectamente() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
 
         pedido.confirmarPedido();
         pedido.avanzarEstado();
@@ -32,7 +33,7 @@ public class PedidoStateTest {
 
     @Test
     public void avanzarDesdeEntregadoDebeLanzarExcepcion() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
 
         pedido.confirmarPedido();
         pedido.avanzarEstado();
@@ -45,7 +46,7 @@ public class PedidoStateTest {
 
     @Test
     public void avanzarSinConfirmarDebeLanzarExcepcion() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
 
         IllegalStateException ex = assertThrows(IllegalStateException.class, pedido::avanzarEstado);
         assertEquals("El pedido debe ser confirmado primero.", ex.getMessage());
@@ -53,7 +54,7 @@ public class PedidoStateTest {
 
     @Test
     public void confirmarPedidoDosVecesDebeLanzarExcepcion() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
 
         pedido.confirmarPedido();
         IllegalStateException ex = assertThrows(IllegalStateException.class, pedido::confirmarPedido);
@@ -62,7 +63,7 @@ public class PedidoStateTest {
 
     @Test
     public void nombreEstadoDebeSerNoConfirmadoInicialmente() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
 
         assertEquals("No confirmado", pedido.getNombreEstado());
     }

@@ -1,52 +1,48 @@
 package uade.tpo.modelo.pedido;
 
+import uade.tpo.modelo.PlataformaStrategy.PlataformaStrategy;
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
-import uade.tpo.modelo.cuponDescuento.CuponVacio;
-import uade.tpo.modelo.observerPedido.NotificadorPedido;
 import uade.tpo.modelo.observerPedido.ObserverPedido;
 import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedidoState.EnEsperaState;
 import uade.tpo.modelo.pedidoState.EstadoPedidoState;
 import uade.tpo.modelo.producto.Producto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    private List<Producto> productos = new ArrayList<>();
     private MetodoPago metodoPago;
     private EstadoPedidoState estadoPedido;
     private String numeroOrden;
     private static int contadorOrdenes = 1;
-    private CuponDescuento cuponDescuento = new CuponVacio();
-    NotificadorPedido notificadorPedido = new NotificadorPedido();
+    private final Carrito carrito = new Carrito();
+    private final PlataformaStrategy plataformaStrategy;
+
+    public Pedido(PlataformaStrategy plataformaStrategy) {
+        this.plataformaStrategy = plataformaStrategy;
+    }
 
     public void setEstado(EstadoPedidoState estado) {
         this.estadoPedido = estado;
         this.estadoPedido.setPedido(this);
-        this.notificadorPedido.notificarSuscriptores(this);
+        this.plataformaStrategy.notificarCambioEstado(this);
     }
 
     public void agregarProducto(Producto producto) {
-        if (producto != null) productos.add(producto);
+        if (producto != null) carrito.agregarProducto(producto);
     }
 
     public List<Producto> getProductos() {
-        return productos;
+        return carrito.getProductos();
     }
 
-    public void aplicarCupon(CuponDescuento cupon) {
-        if (cupon == null || !cupon.esValido()) {
-            throw new IllegalArgumentException("Cupón inválido.");
-        }
-        this.cuponDescuento = cupon;
+    public void setCupon(CuponDescuento cupon) {
+        plataformaStrategy.setCupon(cupon);
     }
 
     public double calcularPrecioTotal() {
-        double total = productos.stream()
-                .mapToDouble(Producto::getPrecio)
-                .sum();
-        return cuponDescuento.aplicarDescuento(total);
+        double total = carrito.calcularTotal();
+        return plataformaStrategy.aplicarDescuento(total);
     }
 
     public void asignarMetodoPago(MetodoPago metodoPago) {
@@ -80,11 +76,11 @@ public class Pedido {
     }
 
     public void agregarSuscriptor(ObserverPedido suscriptor) {
-        notificadorPedido.agregarSuscriptor(suscriptor);
+        plataformaStrategy.agregarObserver(suscriptor);
     }
 
     public void limpiarSuscriptores() {
-        notificadorPedido.limpiarSuscriptores();
+        plataformaStrategy.limpiarObservers();
     }
 
     public String getNumeroOrden() {

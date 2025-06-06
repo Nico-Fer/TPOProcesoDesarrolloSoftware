@@ -1,9 +1,7 @@
 package uade.tpo.modelo.pedido;
 
 import org.junit.Test;
-import uade.tpo.modelo.cuponDescuento.CuponDescuento;
-import uade.tpo.modelo.cuponDescuento.CuponVacio;
-import uade.tpo.modelo.cuponDescuento.PorcentajeDescuento;
+import uade.tpo.modelo.PlataformaStrategy.MobileStrategy;
 import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pago.TarjetaCredito;
 import uade.tpo.modelo.producto.Producto;
@@ -18,7 +16,7 @@ public class PedidoTest {
     @Test
     public void agregarProductoAlPedidoCorrectamente() {
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(),
                 null);
 
@@ -31,7 +29,7 @@ public class PedidoTest {
     @Test
     public void obtenerListaDeProductosDelPedido() {
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(),
                 null);
         Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(),
@@ -49,7 +47,7 @@ public class PedidoTest {
     @Test
     public void calcularPrecioTotalDeProductos() {
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         Producto pizza = new Producto("Pizza", "Pizza de muzzarella", 1500.0, Collections.emptyList(),
                 null);
         Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(),
@@ -65,7 +63,7 @@ public class PedidoTest {
     @Test
     public void calcularPrecioTotalDePedidoVacioDebeSerCero() {
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         double total = pedido.calcularPrecioTotal();
 
         assertEquals(0.0, total);
@@ -74,7 +72,7 @@ public class PedidoTest {
     @Test
     public void asignarMetodoPagoCorrectamente() {
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         MetodoPago metodoPago = new TarjetaCredito("1234567890123456", "123");
 
         pedido.asignarMetodoPago(metodoPago);
@@ -85,7 +83,7 @@ public class PedidoTest {
     @Test
     public void pagarPedidoConMetodoPagoAsignadoNoLanzaExcepciones() {
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         MetodoPago metodoPago = new TarjetaCredito("1234567890123456", "123");
         pedido.asignarMetodoPago(metodoPago);
 
@@ -95,7 +93,7 @@ public class PedidoTest {
     @Test
     public void pagarPedidoSinMetodoPagoAsignadoDebeLanzarExcepcion() {
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         IllegalStateException excepcion = assertThrows(IllegalStateException.class, pedido::pagarPedido);
 
         assertEquals("No se asignó un método de pago.", excepcion.getMessage());
@@ -103,7 +101,7 @@ public class PedidoTest {
 
     @Test
     public void confirmarPedidoDebeAsignarNumeroDeOrden() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new MobileStrategy());
         pedido.confirmarPedido();
         String numeroOrden = pedido.getNumeroOrden();
 
@@ -114,8 +112,8 @@ public class PedidoTest {
 
     @Test
     public void numeroDeOrdenDebeSerUnicoPorPedido() {
-        Pedido pedido1 = new Pedido();
-        Pedido pedido2 = new Pedido();
+        Pedido pedido1 = new Pedido(new MobileStrategy());
+        Pedido pedido2 = new Pedido(new MobileStrategy());
 
         pedido1.confirmarPedido();
         pedido2.confirmarPedido();

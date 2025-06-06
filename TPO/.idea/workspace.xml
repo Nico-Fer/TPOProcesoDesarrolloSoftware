@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/MobileStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/PlataformaStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/TotemStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponStrategy/CuponSinValidarStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponStrategy/CuponStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponStrategy/CuponValidadoStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/notificacionStrategy/NotificacionActivaStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/notificacionStrategy/NotificacionInactivaStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/notificacionStrategy/NotificacionStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Carrito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/plataformaStrategy/PlataformaStrategyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/personalRestaurante/Mesero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/personalRestaurante/Mesero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/PorcentajeDescuento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cuponDescuento/PorcentajeDescuento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/CuponDescuento/CuponDescuentoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/CuponDescuento/CuponDescuentoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteFlujoRealTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/restaurante/RestauranteFlujoRealTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,119 +56,104 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.agregarProductoAlPedidoActivoExitosamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.agregarProductoInexistenteLanzaExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.agregarProductoSinPedidoActivoLanzaExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.aplicarCuponCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.aplicarCuponSinPedidoActivoLanzaExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.cancelarPedidoActivoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.crearCliente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.crearClienteCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.iniciarPedidoAgregaAPedidosDelCliente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteTest.pagarPedidoFlujoCompleto.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CuponDescuentoTest.cuponVacioNoModificaElTotal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CuponDescuentoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.agregarProductoAlMenuCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.agregarProductosDuplicadosAlMenu.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.buscarProductoExistentePorNombre.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.buscarProductoInexistentePorNombre.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.filtrarProductosPorPrecioConResultados.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.filtrarProductosPorPrecioSinResultados.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MenuTest.obtenerListaDeProductosDelMenu.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MetodoPagoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PagoTest.crearTarjetaCreditoConDatosValidos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PagoTest.procesarPagoConTarjetaCreditoNoLanzaExcepciones.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoStateTest.ConfirmarPedidoDebeAsignarEstadoEnEspera.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoStateTest.avanzarDeEnEsperaACorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoStateTest.avanzarDesdeEntregadoDebeLanzarExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoStateTest.avanzarSinConfirmarDebeLanzarExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoStateTest.confirmarPedidoDosVecesDebeLanzarExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoStateTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoStateTest.nombreEstadoDebeSerNoConfirmadoInicialmente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.agregarProductoAlPedidoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.aplicarCuponInvalidoLanzaExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.aplicarCuponPorcentajeYCalcularTotal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.asignarMetodoPagoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.calcularPrecioTotalDePedidoVacioDebeSerCero.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.calcularPrecioTotalDeProductos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.confirmarPedidoDebeAsignarNumeroDeOrden.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.numeroDeOrdenDebeSerUnicoPorPedido.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.obtenerListaDeProductosDelPedido.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.pagarPedidoConMetodoPagoAsignadoNoLanzaExcepciones.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoTest.pagarPedidoSinMetodoPagoAsignadoDebeLanzarExcepcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.crearProductoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.obtenerDescripcionDelProducto.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.obtenerListaDeIngredientesDelProducto.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.obtenerPrecioDelProducto.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.productoConIngredientesNullDebeNoTenerAlergenicos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.productoContieneIngredientesAlergenicos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.productoSinIngredientesAlergenicos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductoTest.productoSinIngredientesDebeNoTenerAlergenicos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteFlujoRealTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteTest.actualizarMenuDelRestaurante.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteTest.actualizarMenuDelRestauranteConNull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteTest.cambiarNombreDelRestaurante.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteTest.crearRestauranteCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteTest.obtenerMenuDelRestaurante.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RestauranteTest.obtenerNombreDelRestaurante.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TarjetaCreditoFactoryTest.crearPagoConDatosNulosDebeFallar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TarjetaCreditoFactoryTest.crearPagoSinCvvDebeFallar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TarjetaCreditoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TarjetaDebitoFactoryTest.crearPagoConDatosNulosDebeFallar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TarjetaDebitoFactoryTest.crearPagoSinCvvDebeFallar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TarjetaDebitoFactoryTest.tarjetaDebitoFactoryCreaMetodoPagoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TipoMetodoPagoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TipoMetodoPagoFactoryTest.tarjetaDebitoFactoryCreaMetodoPagoCorrectamente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in TPO.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/nico/Documents/TPOProcesoDesarrolloSoftware/TPOProcesoDesarrolloSoftware/TPO/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.ClienteTest.agregarProductoAlPedidoActivoExitosamente.executor": "Run",
+    "JUnit.ClienteTest.agregarProductoInexistenteLanzaExcepcion.executor": "Run",
+    "JUnit.ClienteTest.agregarProductoSinPedidoActivoLanzaExcepcion.executor": "Run",
+    "JUnit.ClienteTest.aplicarCuponCorrectamente.executor": "Run",
+    "JUnit.ClienteTest.aplicarCuponSinPedidoActivoLanzaExcepcion.executor": "Run",
+    "JUnit.ClienteTest.cancelarPedidoActivoCorrectamente.executor": "Run",
+    "JUnit.ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo.executor": "Run",
+    "JUnit.ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion.executor": "Run",
+    "JUnit.ClienteTest.crearCliente.executor": "Run",
+    "JUnit.ClienteTest.crearClienteCorrectamente.executor": "Run",
+    "JUnit.ClienteTest.executor": "Run",
+    "JUnit.ClienteTest.iniciarPedidoAgregaAPedidosDelCliente.executor": "Run",
+    "JUnit.ClienteTest.pagarPedidoFlujoCompleto.executor": "Run",
+    "JUnit.CuponDescuentoTest.cuponVacioNoModificaElTotal.executor": "Run",
+    "JUnit.CuponDescuentoTest.executor": "Run",
+    "JUnit.MenuTest.agregarProductoAlMenuCorrectamente.executor": "Run",
+    "JUnit.MenuTest.agregarProductosDuplicadosAlMenu.executor": "Run",
+    "JUnit.MenuTest.buscarProductoExistentePorNombre.executor": "Run",
+    "JUnit.MenuTest.buscarProductoInexistentePorNombre.executor": "Run",
+    "JUnit.MenuTest.executor": "Run",
+    "JUnit.MenuTest.filtrarProductosPorPrecioConResultados.executor": "Run",
+    "JUnit.MenuTest.filtrarProductosPorPrecioSinResultados.executor": "Run",
+    "JUnit.MenuTest.obtenerListaDeProductosDelMenu.executor": "Run",
+    "JUnit.MetodoPagoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor": "Debug",
+    "JUnit.PagoTest.crearTarjetaCreditoConDatosValidos.executor": "Run",
+    "JUnit.PagoTest.procesarPagoConTarjetaCreditoNoLanzaExcepciones.executor": "Run",
+    "JUnit.PedidoStateTest.ConfirmarPedidoDebeAsignarEstadoEnEspera.executor": "Run",
+    "JUnit.PedidoStateTest.avanzarDeEnEsperaACorrectamente.executor": "Run",
+    "JUnit.PedidoStateTest.avanzarDesdeEntregadoDebeLanzarExcepcion.executor": "Run",
+    "JUnit.PedidoStateTest.avanzarSinConfirmarDebeLanzarExcepcion.executor": "Run",
+    "JUnit.PedidoStateTest.confirmarPedidoDosVecesDebeLanzarExcepcion.executor": "Run",
+    "JUnit.PedidoStateTest.executor": "Run",
+    "JUnit.PedidoStateTest.nombreEstadoDebeSerNoConfirmadoInicialmente.executor": "Run",
+    "JUnit.PedidoTest.agregarProductoAlPedidoCorrectamente.executor": "Run",
+    "JUnit.PedidoTest.aplicarCuponInvalidoLanzaExcepcion.executor": "Run",
+    "JUnit.PedidoTest.aplicarCuponPorcentajeYCalcularTotal.executor": "Run",
+    "JUnit.PedidoTest.asignarMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.PedidoTest.calcularPrecioTotalDePedidoVacioDebeSerCero.executor": "Run",
+    "JUnit.PedidoTest.calcularPrecioTotalDeProductos.executor": "Run",
+    "JUnit.PedidoTest.confirmarPedidoDebeAsignarNumeroDeOrden.executor": "Run",
+    "JUnit.PedidoTest.executor": "Run",
+    "JUnit.PedidoTest.numeroDeOrdenDebeSerUnicoPorPedido.executor": "Run",
+    "JUnit.PedidoTest.obtenerListaDeProductosDelPedido.executor": "Run",
+    "JUnit.PedidoTest.pagarPedidoConMetodoPagoAsignadoNoLanzaExcepciones.executor": "Run",
+    "JUnit.PedidoTest.pagarPedidoSinMetodoPagoAsignadoDebeLanzarExcepcion.executor": "Run",
+    "JUnit.PlataformaStrategyTest.sePuedeCrearPedidoConTotemStrategy.executor": "Run",
+    "JUnit.ProductoTest.crearProductoCorrectamente.executor": "Run",
+    "JUnit.ProductoTest.executor": "Run",
+    "JUnit.ProductoTest.obtenerDescripcionDelProducto.executor": "Run",
+    "JUnit.ProductoTest.obtenerListaDeIngredientesDelProducto.executor": "Run",
+    "JUnit.ProductoTest.obtenerPrecioDelProducto.executor": "Run",
+    "JUnit.ProductoTest.productoConIngredientesNullDebeNoTenerAlergenicos.executor": "Run",
+    "JUnit.ProductoTest.productoContieneIngredientesAlergenicos.executor": "Run",
+    "JUnit.ProductoTest.productoSinIngredientesAlergenicos.executor": "Run",
+    "JUnit.ProductoTest.productoSinIngredientesDebeNoTenerAlergenicos.executor": "Run",
+    "JUnit.RestauranteFlujoRealTest.executor": "Run",
+    "JUnit.RestauranteTest.actualizarMenuDelRestaurante.executor": "Run",
+    "JUnit.RestauranteTest.actualizarMenuDelRestauranteConNull.executor": "Run",
+    "JUnit.RestauranteTest.cambiarNombreDelRestaurante.executor": "Run",
+    "JUnit.RestauranteTest.crearRestauranteCorrectamente.executor": "Run",
+    "JUnit.RestauranteTest.executor": "Run",
+    "JUnit.RestauranteTest.obtenerMenuDelRestaurante.executor": "Run",
+    "JUnit.RestauranteTest.obtenerNombreDelRestaurante.executor": "Run",
+    "JUnit.TarjetaCreditoFactoryTest.crearPagoConDatosNulosDebeFallar.executor": "Run",
+    "JUnit.TarjetaCreditoFactoryTest.crearPagoSinCvvDebeFallar.executor": "Run",
+    "JUnit.TarjetaCreditoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.TarjetaDebitoFactoryTest.crearPagoConDatosNulosDebeFallar.executor": "Run",
+    "JUnit.TarjetaDebitoFactoryTest.crearPagoSinCvvDebeFallar.executor": "Run",
+    "JUnit.TarjetaDebitoFactoryTest.tarjetaDebitoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.TipoMetodoPagoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.TipoMetodoPagoFactoryTest.tarjetaDebitoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
+    "JUnit.java in TPO.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/nico/Documents/TPOProcesoDesarrolloSoftware/TPOProcesoDesarrolloSoftware/TPO/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nico\Documents\TPOProcesoDesarrolloSoftware\TPOProcesoDesarrolloSoftware\TPO\src\test\java" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in TPO">
-    <configuration name="ClienteTest.cancelarPedidoActivoCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.cliente.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.cliente" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.cliente.ClienteTest" />
-      <option name="METHOD_NAME" value="cancelarPedidoActivoCorrectamente" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
@@ -185,6 +186,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlataformaStrategyTest.sePuedeCrearPedidoConTotemStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.plataformaStrategy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.plataformaStrategy" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.plataformaStrategy.PlataformaStrategyTest" />
+      <option name="METHOD_NAME" value="sePuedeCrearPedidoConTotemStrategy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RestauranteFlujoRealTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
@@ -211,10 +228,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in TPO" />
+        <item itemvalue="JUnit.PlataformaStrategyTest.sePuedeCrearPedidoConTotemStrategy" />
         <item itemvalue="JUnit.RestauranteFlujoRealTest" />
         <item itemvalue="JUnit.ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion" />
         <item itemvalue="JUnit.ClienteTest.cancelarPedidoDebeEliminarElPedidoActivo" />
-        <item itemvalue="JUnit.ClienteTest.cancelarPedidoActivoCorrectamente" />
       </list>
     </recent_temporary>
   </component>
@@ -242,6 +259,10 @@
       <workItem from="1746104876018" duration="16317000" />
       <workItem from="1747077199338" duration="2463000" />
       <workItem from="1747139529196" duration="9984000" />
+      <workItem from="1748615676962" duration="1478000" />
+      <workItem from="1748692943814" duration="2771000" />
+      <workItem from="1748730557757" duration="3200000" />
+      <workItem from="1749209346046" duration="3997000" />
     </task>
     <servers />
   </component>
