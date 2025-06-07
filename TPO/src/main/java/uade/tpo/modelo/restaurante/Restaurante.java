@@ -15,7 +15,7 @@ public class Restaurante {
     private String nombre;
     private Menu menu;
     private List<PersonalRestaurante> personalRestaurante = new ArrayList<>();
-    private PedidoController pedidoController;
+    private final PedidoController pedidoController;
 
     public Restaurante(String nombre, Menu menu) {
         this.nombre = nombre;

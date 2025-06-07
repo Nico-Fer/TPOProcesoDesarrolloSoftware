@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ProgramadoState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/scheduler/SchedulerPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/schedulerPedido/SchedulerPedidoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DiagramaDeClases.asta" beforeDir="false" afterPath="$PROJECT_DIR$/../DiagramaDeClases.asta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/PlataformaStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/PlataformaStrategy/PlataformaStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/restaurante/Restaurante.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,9 +143,10 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/nico/Documents/TPOProcesoDesarrolloSoftware/TPOProcesoDesarrolloSoftware/TPO/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -270,7 +267,9 @@
       <workItem from="1748730557757" duration="3200000" />
       <workItem from="1749209346046" duration="8102000" />
       <workItem from="1749234883724" duration="13055000" />
-      <workItem from="1749298023652" duration="8248000" />
+      <workItem from="1749298023652" duration="10814000" />
+      <workItem from="1749310672951" duration="98000" />
+      <workItem from="1749334042114" duration="4475000" />
     </task>
     <servers />
   </component>

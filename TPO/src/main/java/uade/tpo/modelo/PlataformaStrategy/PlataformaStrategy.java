@@ -7,10 +7,8 @@ import uade.tpo.modelo.pedido.Pedido;
 public interface PlataformaStrategy {
     void setCupon(CuponDescuento cupon);
     double aplicarDescuento(double subtotal);
-
     void agregarObserver(ObserverPedido observer);
     void notificarCambioEstado(Pedido pedido);
     void limpiarObservers();
-
     Float calcularRutaPedido();
 }
