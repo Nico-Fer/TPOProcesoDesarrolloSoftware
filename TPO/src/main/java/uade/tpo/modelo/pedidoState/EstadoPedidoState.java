@@ -1,6 +1,5 @@
 package uade.tpo.modelo.pedidoState;
 
-import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedido.Carrito;
 import uade.tpo.modelo.pedido.Pedido;
 import uade.tpo.modelo.producto.Producto;

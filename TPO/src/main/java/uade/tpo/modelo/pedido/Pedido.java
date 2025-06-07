@@ -7,8 +7,10 @@ import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedidoState.EnArmadoState;
 import uade.tpo.modelo.pedidoState.EnEsperaState;
 import uade.tpo.modelo.pedidoState.EstadoPedidoState;
+import uade.tpo.modelo.pedidoState.ProgramadoState;
 import uade.tpo.modelo.producto.Producto;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -75,11 +77,15 @@ public class Pedido {
     }
 
     public void confirmarPedido() {
-        if (!(estadoPedido instanceof EnArmadoState)) {
+        if (!(estadoPedido instanceof EnArmadoState || estadoPedido instanceof ProgramadoState)) {
             throw new IllegalStateException("El pedido ya fue confirmado.");
         }
         this.numeroOrden = String.format("%05d", contadorOrdenes++);
         this.setEstado(new EnEsperaState());
+    }
+
+    public void programarPedido(LocalDateTime fechaHoraProgramada) {
+        this.setEstado(new ProgramadoState(fechaHoraProgramada));
     }
 
     public EstadoPedidoState getEstado() { return estadoPedido;}

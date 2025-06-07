@@ -190,7 +190,7 @@ public class PedidoTest {
 
         Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 20f);
         pedido.agregarProducto(pizza);
-        pedido.pagarPedido(); // primer pago
+        pedido.pagarPedido();
 
         Producto empanada = new Producto("Empanada", "De carne", 500.0, Collections.emptyList(), null, 15f);
         pedido.agregarProducto(empanada);

@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/ItemCarrito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ProgramadoState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/scheduler/SchedulerPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/schedulerPedido/SchedulerPedidoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Carrito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnArmadoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnArmadoState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnEsperaState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnEsperaState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnPreparacionState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnPreparacionState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EntregadoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EntregadoState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ListoParaEntregarState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ListoParaEntregarState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +81,13 @@
     "JUnit.PedidoStateTest.confirmarPedidoDosVecesDebeLanzarExcepcion.executor": "Run",
     "JUnit.PedidoStateTest.executor": "Debug",
     "JUnit.PedidoStateTest.nombreEstadoDebeSerNoConfirmadoInicialmente.executor": "Run",
+    "JUnit.PedidoStateTest.tiempoRestanteEnEsperaConMenosDeDiezPedidosDebeSerCincoMinutos.executor": "Run",
+    "JUnit.PedidoStateTest.tiempoRestanteEnEsperaConMenosDeDiezPedidosDebeSerCincoMinutosEnTotem.executor": "Run",
+    "JUnit.PedidoStateTest.tiempoRestanteEnEsperaConMultiploDeDiezPedidosDebeSerVeintePorCadaDiez.executor": "Run",
+    "JUnit.PedidoStateTest.tiempoRestanteEnEsperaConMultiploDeDiezPedidosDebeSerVeintePorCadaDiezEnTotem.executor": "Run",
+    "JUnit.PedidoStateTest.tiempoRestanteEnPreparacionEsSumaDeTiemposDeProductos.executor": "Run",
+    "JUnit.PedidoStateTest.tiempoRestanteListoParaEntregarEnMobileDebeSerDeliverySimulado.executor": "Run",
+    "JUnit.PedidoStateTest.tiempoRestanteListoParaEntregarEnRestauranteDebeSerCero.executor": "Run",
     "JUnit.PedidoTest.agregarProductoAlPedidoCorrectamente.executor": "Run",
     "JUnit.PedidoTest.agregarProductoEnEstadoEnArmadoDebeAgregarCorrectamente.executor": "Run",
     "JUnit.PedidoTest.agregarProductoEnEstadoEnEsperaDebeAgregarCorrectamente.executor": "Run",
@@ -97,6 +101,7 @@
     "JUnit.PedidoTest.executor": "Debug",
     "JUnit.PedidoTest.numeroDeOrdenDebeSerUnicoPorPedido.executor": "Run",
     "JUnit.PedidoTest.obtenerListaDeProductosDelPedido.executor": "Run",
+    "JUnit.PedidoTest.pagarEnEstadoNoPermitidoDebeLanzarExcepcion.executor": "Run",
     "JUnit.PedidoTest.pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos.executor": "Run",
     "JUnit.PedidoTest.pagarPedidoConMetodoPagoAsignadoNoLanzaExcepciones.executor": "Run",
     "JUnit.PedidoTest.pagarPedidoDebeMarcarProductosComoPagados.executor": "Run",
@@ -119,6 +124,9 @@
     "JUnit.RestauranteTest.executor": "Run",
     "JUnit.RestauranteTest.obtenerMenuDelRestaurante.executor": "Run",
     "JUnit.RestauranteTest.obtenerNombreDelRestaurante.executor": "Run",
+    "JUnit.SchedulerPedidoTest.pedidoNoDebeCambiarSiHoraProgramadaYaPaso.executor": "Run",
+    "JUnit.SchedulerPedidoTest.pedidoProgramadoDebeCambiarAEstadoEnEsperaAutomaticamente.executor": "Run",
+    "JUnit.SchedulerPedidoTest.pedidoProgramadoPuedeSerCanceladoAntesDeHora.executor": "Run",
     "JUnit.TarjetaCreditoFactoryTest.crearPagoConDatosNulosDebeFallar.executor": "Run",
     "JUnit.TarjetaCreditoFactoryTest.crearPagoSinCvvDebeFallar.executor": "Run",
     "JUnit.TarjetaCreditoFactoryTest.tarjetaCreditoFactoryCreaMetodoPagoCorrectamente.executor": "Run",
@@ -151,65 +159,65 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in TPO">
-    <configuration name="PedidoTest.agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PedidoStateTest.tiempoRestanteEnEsperaConMultiploDeDiezPedidosDebeSerVeintePorCadaDiezEnTotem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.pedidoStateTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
-      <option name="METHOD_NAME" value="agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedidoStateTest" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedidoStateTest.PedidoStateTest" />
+      <option name="METHOD_NAME" value="tiempoRestanteEnEsperaConMultiploDeDiezPedidosDebeSerVeintePorCadaDiezEnTotem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PedidoTest.pagarEnEstadoNoPermitidoDebeLanzarExcepcion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerPedidoTest.pedidoNoDebeCambiarSiHoraProgramadaYaPaso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.schedulerPedido.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
-      <option name="METHOD_NAME" value="pagarEnEstadoNoPermitidoDebeLanzarExcepcion" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.schedulerPedido" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.schedulerPedido.SchedulerPedidoTest" />
+      <option name="METHOD_NAME" value="pedidoNoDebeCambiarSiHoraProgramadaYaPaso" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PedidoTest.pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerPedidoTest.pedidoProgramadoDebeCambiarAEstadoEnEsperaAutomaticamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.schedulerPedido.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
-      <option name="METHOD_NAME" value="pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.schedulerPedido" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.schedulerPedido.SchedulerPedidoTest" />
+      <option name="METHOD_NAME" value="pedidoProgramadoDebeCambiarAEstadoEnEsperaAutomaticamente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PedidoTest.pagarPedidoDebeMarcarProductosComoPagados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerPedidoTest.pedidoProgramadoPuedeSerCanceladoAntesDeHora" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.schedulerPedido.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
-      <option name="METHOD_NAME" value="pagarPedidoDebeMarcarProductosComoPagados" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.schedulerPedido" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.schedulerPedido.SchedulerPedidoTest" />
+      <option name="METHOD_NAME" value="pedidoProgramadoPuedeSerCanceladoAntesDeHora" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -226,10 +234,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in TPO" />
-        <item itemvalue="JUnit.PedidoTest.pagarEnEstadoNoPermitidoDebeLanzarExcepcion" />
-        <item itemvalue="JUnit.PedidoTest.agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto" />
-        <item itemvalue="JUnit.PedidoTest.pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos" />
-        <item itemvalue="JUnit.PedidoTest.pagarPedidoDebeMarcarProductosComoPagados" />
+        <item itemvalue="JUnit.SchedulerPedidoTest.pedidoProgramadoPuedeSerCanceladoAntesDeHora" />
+        <item itemvalue="JUnit.SchedulerPedidoTest.pedidoNoDebeCambiarSiHoraProgramadaYaPaso" />
+        <item itemvalue="JUnit.SchedulerPedidoTest.pedidoProgramadoDebeCambiarAEstadoEnEsperaAutomaticamente" />
+        <item itemvalue="JUnit.PedidoStateTest.tiempoRestanteEnEsperaConMultiploDeDiezPedidosDebeSerVeintePorCadaDiezEnTotem" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +270,7 @@
       <workItem from="1748730557757" duration="3200000" />
       <workItem from="1749209346046" duration="8102000" />
       <workItem from="1749234883724" duration="13055000" />
-      <workItem from="1749298023652" duration="3516000" />
+      <workItem from="1749298023652" duration="8248000" />
     </task>
     <servers />
   </component>
