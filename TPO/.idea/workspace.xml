@@ -5,23 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94ac27a-100a-4e4d-8dc2-67c5505e1bee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnArmadoState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/ItemCarrito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/cliente/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/Efectivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/Efectivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/GooglePay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/GooglePay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MercadoPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MercadoPago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MetodoPago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/MetodoPago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaCredito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaDebito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pago/TarjetaDebito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Carrito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedido/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnArmadoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnArmadoState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnEsperaState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnEsperaState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnPreparacionState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EnPreparacionState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EntregadoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EntregadoState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/EstadoPedidoState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ListoParaEntregarState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uade/tpo/modelo/pedidoState/ListoParaEntregarState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedido/PedidoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,7 @@
     "JUnit.ClienteTest.cancelarPedidoSinPedidoActivoDebeLanzarExcepcion.executor": "Run",
     "JUnit.ClienteTest.crearCliente.executor": "Run",
     "JUnit.ClienteTest.crearClienteCorrectamente.executor": "Run",
-    "JUnit.ClienteTest.executor": "Run",
+    "JUnit.ClienteTest.executor": "Debug",
     "JUnit.ClienteTest.iniciarPedidoAgregaAPedidosDelCliente.executor": "Run",
     "JUnit.ClienteTest.pagarPedidoFlujoCompleto.executor": "Run",
     "JUnit.CuponDescuentoTest.cuponVacioNoModificaElTotal.executor": "Run",
@@ -91,16 +85,21 @@
     "JUnit.PedidoStateTest.executor": "Debug",
     "JUnit.PedidoStateTest.nombreEstadoDebeSerNoConfirmadoInicialmente.executor": "Run",
     "JUnit.PedidoTest.agregarProductoAlPedidoCorrectamente.executor": "Run",
+    "JUnit.PedidoTest.agregarProductoEnEstadoEnArmadoDebeAgregarCorrectamente.executor": "Run",
+    "JUnit.PedidoTest.agregarProductoEnEstadoEnEsperaDebeAgregarCorrectamente.executor": "Run",
+    "JUnit.PedidoTest.agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto.executor": "Run",
     "JUnit.PedidoTest.aplicarCuponInvalidoLanzaExcepcion.executor": "Run",
     "JUnit.PedidoTest.aplicarCuponPorcentajeYCalcularTotal.executor": "Run",
     "JUnit.PedidoTest.asignarMetodoPagoCorrectamente.executor": "Run",
     "JUnit.PedidoTest.calcularPrecioTotalDePedidoVacioDebeSerCero.executor": "Run",
     "JUnit.PedidoTest.calcularPrecioTotalDeProductos.executor": "Run",
     "JUnit.PedidoTest.confirmarPedidoDebeAsignarNumeroDeOrden.executor": "Run",
-    "JUnit.PedidoTest.executor": "Run",
+    "JUnit.PedidoTest.executor": "Debug",
     "JUnit.PedidoTest.numeroDeOrdenDebeSerUnicoPorPedido.executor": "Run",
     "JUnit.PedidoTest.obtenerListaDeProductosDelPedido.executor": "Run",
+    "JUnit.PedidoTest.pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos.executor": "Run",
     "JUnit.PedidoTest.pagarPedidoConMetodoPagoAsignadoNoLanzaExcepciones.executor": "Run",
+    "JUnit.PedidoTest.pagarPedidoDebeMarcarProductosComoPagados.executor": "Run",
     "JUnit.PedidoTest.pagarPedidoSinMetodoPagoAsignadoDebeLanzarExcepcion.executor": "Run",
     "JUnit.PlataformaStrategyTest.sePuedeCrearPedidoConTotemStrategy.executor": "Run",
     "JUnit.ProductoTest.crearProductoCorrectamente.executor": "Run",
@@ -152,64 +151,66 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in TPO">
-    <configuration name="MercadoPagoFactoryTest.mercadoPagoFactoryCreaPagoValido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PedidoTest.agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.metodoPagoFactory.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.metodoPagoFactory" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.metodoPagoFactory.MercadoPagoFactoryTest" />
-      <option name="METHOD_NAME" value="mercadoPagoFactoryCreaPagoValido" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
+      <option name="METHOD_NAME" value="agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PedidoStateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PedidoTest.pagarEnEstadoNoPermitidoDebeLanzarExcepcion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.pedidoStateTest.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedidoStateTest" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedidoStateTest.PedidoStateTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlataformaStrategyTest.sePuedeCrearPedidoConTotemStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.plataformaStrategy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.plataformaStrategy" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.plataformaStrategy.PlataformaStrategyTest" />
-      <option name="METHOD_NAME" value="sePuedeCrearPedidoConTotemStrategy" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
+      <option name="METHOD_NAME" value="pagarEnEstadoNoPermitidoDebeLanzarExcepcion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestauranteFlujoRealTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PedidoTest.pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uade.tpo.modelo.restaurante.*" />
+          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uade.tpo.modelo.restaurante" />
-      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.restaurante.RestauranteFlujoRealTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
+      <option name="METHOD_NAME" value="pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PedidoTest.pagarPedidoDebeMarcarProductosComoPagados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uade.tpo.modelo.pedido.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uade.tpo.modelo.pedido" />
+      <option name="MAIN_CLASS_NAME" value="uade.tpo.modelo.pedido.PedidoTest" />
+      <option name="METHOD_NAME" value="pagarPedidoDebeMarcarProductosComoPagados" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -225,10 +226,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in TPO" />
-        <item itemvalue="JUnit.PedidoStateTest" />
-        <item itemvalue="JUnit.RestauranteFlujoRealTest" />
-        <item itemvalue="JUnit.MercadoPagoFactoryTest.mercadoPagoFactoryCreaPagoValido" />
-        <item itemvalue="JUnit.PlataformaStrategyTest.sePuedeCrearPedidoConTotemStrategy" />
+        <item itemvalue="JUnit.PedidoTest.pagarEnEstadoNoPermitidoDebeLanzarExcepcion" />
+        <item itemvalue="JUnit.PedidoTest.agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto" />
+        <item itemvalue="JUnit.PedidoTest.pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos" />
+        <item itemvalue="JUnit.PedidoTest.pagarPedidoDebeMarcarProductosComoPagados" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +261,8 @@
       <workItem from="1748692943814" duration="2771000" />
       <workItem from="1748730557757" duration="3200000" />
       <workItem from="1749209346046" duration="8102000" />
-      <workItem from="1749234883724" duration="12043000" />
+      <workItem from="1749234883724" duration="13055000" />
+      <workItem from="1749298023652" duration="3516000" />
     </task>
     <servers />
   </component>
@@ -271,9 +273,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/uade/tpo/modelo/pedidoStateTest/PedidoStateTest.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/test/java/uade/tpo/modelo/cliente/ClienteTest.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,6 +1,8 @@
 package uade.tpo.modelo.pedidoState;
 
+import uade.tpo.modelo.pedido.Carrito;
 import uade.tpo.modelo.pedido.Pedido;
+import uade.tpo.modelo.producto.Producto;
 
 public class EntregadoState implements EstadoPedidoState{
     private Pedido pedido;
@@ -31,4 +33,15 @@ public class EntregadoState implements EstadoPedidoState{
         System.out.println("El pedido ya fue entregado. No se puede cancelar.");
         return false;
     }
+
+    @Override
+    public void agregarProducto(Producto producto, Carrito carrito) {
+        throw new IllegalStateException("No se puede agregar productos en este estado.");
+    }
+
+    @Override
+    public void pagar() {
+        throw new IllegalStateException("El pedido ya fue pagado o está en proceso.");
+    }
+
 }

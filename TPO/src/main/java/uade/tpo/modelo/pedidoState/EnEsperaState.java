@@ -1,7 +1,9 @@
 package uade.tpo.modelo.pedidoState;
 
 import uade.tpo.modelo.pago.MetodoPago;
+import uade.tpo.modelo.pedido.Carrito;
 import uade.tpo.modelo.pedido.Pedido;
+import uade.tpo.modelo.producto.Producto;
 
 public class EnEsperaState implements EstadoPedidoState{
     private Pedido pedido;
@@ -34,5 +36,19 @@ public class EnEsperaState implements EstadoPedidoState{
         double total = pedido.calcularPrecioTotal();
         metodoPago.reembolsarMonto(total * porcentajeReembolso);
         return true;
+    }
+
+    @Override
+    public void agregarProducto(Producto producto, Carrito carrito) {
+        if (producto != null) carrito.agregarProducto(producto);
+    }
+
+    @Override
+    public void pagar() {
+        MetodoPago metodoPago = pedido.getMetodoPago();
+        if (metodoPago == null) {
+            throw new IllegalStateException("No se asignó un método de pago.");
+        }
+        metodoPago.procesarPago(pedido.calcularPrecioTotal());
     }
 }

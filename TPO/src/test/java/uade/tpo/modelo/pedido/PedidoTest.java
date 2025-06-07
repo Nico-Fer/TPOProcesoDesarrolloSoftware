@@ -116,4 +116,88 @@ public class PedidoTest {
         assertNotEquals(pedido1.getNumeroOrden(), pedido2.getNumeroOrden());
     }
 
+    @Test
+    public void agregarProductoEnEstadoEnArmadoDebeAgregarCorrectamente() {
+        Pedido pedido = new Pedido(new MobileStrategy());
+        Producto empanada = new Producto("Empanada", "Empanada de carne", 800.0, Collections.emptyList(), null, 15f);
+
+        pedido.agregarProducto(empanada);
+
+        assertEquals(1, pedido.getProductos().size());
+        assertTrue(pedido.getProductos().contains(empanada));
+    }
+
+    @Test
+    public void agregarProductoEnEstadoEnEsperaDebeAgregarCorrectamente() {
+        Pedido pedido = new Pedido(new MobileStrategy());
+        pedido.confirmarPedido();
+        Producto bebida = new Producto("Bebida", "Agua", 300.0, Collections.emptyList(), null, 5f);
+
+        pedido.agregarProducto(bebida);
+
+        assertEquals(1, pedido.getProductos().size());
+        assertTrue(pedido.getProductos().contains(bebida));
+    }
+
+    @Test
+    public void agregarProductoEnEstadoNoPermitidoNoDebeAgregarProducto() {
+        Pedido pedido = new Pedido(new MobileStrategy());
+        pedido.confirmarPedido();
+        pedido.avanzarEstado();
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1500.0, Collections.emptyList(), null, 20f);
+
+        IllegalStateException exception = assertThrows(IllegalStateException.class, () -> {
+            pedido.agregarProducto(pizza);
+        });
+
+        assertEquals("No se puede agregar productos en este estado.", exception.getMessage());
+    }
+
+    @Test
+    public void pagarEnEstadoNoPermitidoDebeLanzarExcepcion() {
+        Pedido pedido = new Pedido(new MobileStrategy());
+        pedido.asignarMetodoPago(new TarjetaCredito("1234567890123456", "123"));
+
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1500.0, Collections.emptyList(), null, 20f);
+        pedido.agregarProducto(pizza);
+
+        pedido.pagarPedido();
+        pedido.confirmarPedido();
+        pedido.avanzarEstado();
+        pedido.avanzarEstado();
+
+        IllegalStateException exception = assertThrows(IllegalStateException.class, pedido::pagarPedido);
+
+        assertEquals("El pedido ya fue pagado o está en proceso.", exception.getMessage());
+    }
+
+    @Test
+    public void pagarPedidoDebeMarcarProductosComoPagados() {
+        Pedido pedido = new Pedido(new MobileStrategy());
+        pedido.asignarMetodoPago(new TarjetaCredito("1234567890123456", "123"));
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 20f);
+        pedido.agregarProducto(pizza);
+
+        pedido.pagarPedido();
+
+        assertEquals(0.0, pedido.calcularPrecioTotal());
+    }
+
+    @Test
+    public void pagarNuevosProductosLuegoDePagoInicialDebeCobrarSoloLosNuevos() {
+        Pedido pedido = new Pedido(new MobileStrategy());
+        pedido.asignarMetodoPago(new TarjetaCredito("1234567890123456", "123"));
+
+        Producto pizza = new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 20f);
+        pedido.agregarProducto(pizza);
+        pedido.pagarPedido(); // primer pago
+
+        Producto empanada = new Producto("Empanada", "De carne", 500.0, Collections.emptyList(), null, 15f);
+        pedido.agregarProducto(empanada);
+
+        double nuevoTotal = pedido.calcularPrecioTotal();
+
+        assertEquals(500.0, nuevoTotal);
+    }
+
 }

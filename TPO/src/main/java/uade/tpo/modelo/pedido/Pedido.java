@@ -23,6 +23,7 @@ public class Pedido {
 
     public Pedido(PlataformaStrategy plataformaStrategy) {
         this.estadoPedido = new EnArmadoState();
+        this.estadoPedido.setPedido(this);
         this.plataformaStrategy = plataformaStrategy;
     }
 
@@ -41,7 +42,7 @@ public class Pedido {
     }
 
     public void agregarProducto(Producto producto) {
-        if (producto != null) carrito.agregarProducto(producto);
+        if (producto != null) estadoPedido.agregarProducto(producto, carrito);
     }
 
     public List<Producto> getProductos() {
@@ -69,7 +70,8 @@ public class Pedido {
         if (metodoPago == null) {
             throw new IllegalStateException("No se asignó un método de pago.");
         }
-        metodoPago.procesarPago(this.calcularPrecioTotal());
+        estadoPedido.pagar();
+        carrito.marcarComoPagados();
     }
 
     public void confirmarPedido() {
@@ -112,5 +114,4 @@ public class Pedido {
     public boolean cancelarPedido() {
         return estadoPedido.cancelarPedido();
     }
-
 }

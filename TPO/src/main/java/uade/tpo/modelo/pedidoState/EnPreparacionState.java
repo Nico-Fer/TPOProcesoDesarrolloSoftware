@@ -2,6 +2,7 @@ package uade.tpo.modelo.pedidoState;
 
 import uade.tpo.modelo.pedido.Pedido;
 import uade.tpo.modelo.producto.Producto;
+import uade.tpo.modelo.pedido.Carrito;
 
 public class EnPreparacionState implements EstadoPedidoState{
     private Pedido pedido;
@@ -31,5 +32,15 @@ public class EnPreparacionState implements EstadoPedidoState{
     @Override
     public boolean cancelarPedido() {
         return true;
+    }
+
+    @Override
+    public void agregarProducto(Producto producto, Carrito carrito) {
+        throw new IllegalStateException("No se puede agregar productos en este estado.");
+    }
+
+    @Override
+    public void pagar() {
+        throw new IllegalStateException("El pedido ya fue pagado o está en proceso.");
     }
 }
