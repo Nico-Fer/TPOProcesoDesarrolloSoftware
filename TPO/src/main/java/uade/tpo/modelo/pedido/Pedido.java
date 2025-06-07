@@ -4,6 +4,7 @@ import uade.tpo.modelo.PlataformaStrategy.PlataformaStrategy;
 import uade.tpo.modelo.cuponDescuento.CuponDescuento;
 import uade.tpo.modelo.observerPedido.ObserverPedido;
 import uade.tpo.modelo.pago.MetodoPago;
+import uade.tpo.modelo.pedidoState.EnArmadoState;
 import uade.tpo.modelo.pedidoState.EnEsperaState;
 import uade.tpo.modelo.pedidoState.EstadoPedidoState;
 import uade.tpo.modelo.producto.Producto;
@@ -21,6 +22,7 @@ public class Pedido {
     private final PlataformaStrategy plataformaStrategy;
 
     public Pedido(PlataformaStrategy plataformaStrategy) {
+        this.estadoPedido = new EnArmadoState();
         this.plataformaStrategy = plataformaStrategy;
     }
 
@@ -71,7 +73,7 @@ public class Pedido {
     }
 
     public void confirmarPedido() {
-        if (estadoPedido != null) {
+        if (!(estadoPedido instanceof EnArmadoState)) {
             throw new IllegalStateException("El pedido ya fue confirmado.");
         }
         this.numeroOrden = String.format("%05d", contadorOrdenes++);
@@ -81,7 +83,7 @@ public class Pedido {
     public EstadoPedidoState getEstado() { return estadoPedido;}
 
     public void avanzarEstado() {
-        if (estadoPedido == null) {
+        if (estadoPedido instanceof EnArmadoState) {
             throw new IllegalStateException("El pedido debe ser confirmado primero.");
         }
         estadoPedido.avanzarEstadoPedido();
@@ -105,6 +107,10 @@ public class Pedido {
 
     public Float calcularTiempoRestante(int cantidadPedidos) {
         return estadoPedido.calcularTiempoRestantePedido(cantidadPedidos);
+    }
+
+    public boolean cancelarPedido() {
+        return estadoPedido.cancelarPedido();
     }
 
 }

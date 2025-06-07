@@ -49,12 +49,17 @@ public class Cliente {
         pedidos.add(pedido);
     }
 
-    public void cancelarPedido() {
-        if (pedidoActivo == null) {
+    public void cancelarPedido(String pedidoId) {
+        Pedido pedido = pedidos.stream().filter(p -> p.getId().equals(pedidoId)).findFirst().orElse(null);
+        if (pedido == null) {
             throw new IllegalStateException("No hay pedido activo para cancelar.");
         }
-        pedidos.remove(pedidoActivo);
-        pedidoActivo = null;
+        if(pedido.cancelarPedido()){
+            pedidos.remove(pedido);
+            if (pedidoActivo != null && pedidoActivo.getId().equals(pedido.getId())) {
+                pedidoActivo = null;
+            }
+        }
     }
 
     public void agregarProductoAPedido(Menu menu, String nombreProducto) {

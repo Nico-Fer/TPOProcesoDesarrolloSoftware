@@ -27,4 +27,9 @@ public class EnPreparacionState implements EstadoPedidoState{
                 .map(Producto::getTiempoPreparacion)
                 .reduce(0.0f, Float::sum);
     }
+
+    @Override
+    public boolean cancelarPedido() {
+        return true;
+    }
 }

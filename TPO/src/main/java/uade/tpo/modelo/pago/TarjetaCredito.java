@@ -21,4 +21,9 @@ public class TarjetaCredito implements MetodoPago{
     public void procesarPago(double monto) {
         System.out.println("Procesando pago de $" + monto + " con tarjeta de crédito.");
     }
+
+    @Override
+    public void reembolsarMonto(double montoReembolso) {
+        System.out.println("Se realizó un reembolso del 75%. Monto final: $" + montoReembolso);
+    }
 }

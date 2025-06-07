@@ -13,4 +13,9 @@ public class MercadoPago implements MetodoPago{
     public void procesarPago(double monto) {
         System.out.println("Pago con MercadoPago de $" + monto + " realizado desde la cuenta: " + email);
     }
+
+    @Override
+    public void reembolsarMonto(double montoReembolso) {
+        System.out.println("Se realizó un reembolso del 75%. Monto final: $" + montoReembolso);
+    }
 }

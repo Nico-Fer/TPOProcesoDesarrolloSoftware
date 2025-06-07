@@ -125,13 +125,13 @@ public class ClienteTest {
     @Test
     void cancelarPedidoActivoCorrectamente() {
         cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
-        assertDoesNotThrow(() -> cliente.cancelarPedido());
+        assertDoesNotThrow(() -> cliente.cancelarPedido(cliente.getPedidoActivo().getId()));
     }
 
     @Test
     void cancelarPedidoDebeEliminarElPedidoActivo() {
         cliente.iniciarPedido(new MobileStrategy(), restaurante.getPedidoController());
-        cliente.cancelarPedido();
+        cliente.cancelarPedido(cliente.getPedidoActivo().getId());
 
         Menu menu = new Menu();
         menu.agregarProducto(new Producto("Pizza", "Muzzarella", 1000.0, Collections.emptyList(), null, 20f));
@@ -144,9 +144,9 @@ public class ClienteTest {
     }
 
     @Test
-    void cancelarPedidoSinPedidoActivoDebeLanzarExcepcion() {
+    void cancelarPedidoSinPedidoDebeLanzarExcepcion() {
         IllegalStateException ex = assertThrows(IllegalStateException.class, () -> {
-            cliente.cancelarPedido();
+            cliente.cancelarPedido("12345");
         });
 
         assertEquals("No hay pedido activo para cancelar.", ex.getMessage());

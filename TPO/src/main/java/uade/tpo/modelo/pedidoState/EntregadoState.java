@@ -25,4 +25,10 @@ public class EntregadoState implements EstadoPedidoState{
     public Float calcularTiempoRestantePedido(int cantidadPedidos) {
         return 0f;
     }
+
+    @Override
+    public boolean cancelarPedido() {
+        System.out.println("El pedido ya fue entregado. No se puede cancelar.");
+        return false;
+    }
 }

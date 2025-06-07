@@ -13,4 +13,9 @@ public class GooglePay implements MetodoPago{
     public void procesarPago(double monto) {
         System.out.println("Pago con Google Pay de $" + monto + " desde cuenta: " + cuentaGoogle);
     }
+
+    @Override
+    public void reembolsarMonto(double montoReembolso) {
+        System.out.println("Se realizó un reembolso del 75%. Monto final: $" + montoReembolso);
+    }
 }

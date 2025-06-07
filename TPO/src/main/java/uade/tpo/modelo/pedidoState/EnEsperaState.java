@@ -1,9 +1,11 @@
 package uade.tpo.modelo.pedidoState;
 
+import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedido.Pedido;
 
 public class EnEsperaState implements EstadoPedidoState{
     private Pedido pedido;
+    private final double porcentajeReembolso = 0.25;
 
     @Override
     public void avanzarEstadoPedido() {
@@ -24,5 +26,13 @@ public class EnEsperaState implements EstadoPedidoState{
     public Float calcularTiempoRestantePedido(int cantidadPedidos) {
         if (cantidadPedidos < 10) return 5.0f;
         return (cantidadPedidos / 10) * 20.0f;
+    }
+
+    @Override
+    public boolean cancelarPedido() {
+        MetodoPago metodoPago = pedido.getMetodoPago();
+        double total = pedido.calcularPrecioTotal();
+        metodoPago.reembolsarMonto(total * porcentajeReembolso);
+        return true;
     }
 }

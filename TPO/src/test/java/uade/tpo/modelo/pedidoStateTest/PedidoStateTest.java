@@ -62,9 +62,9 @@ public class PedidoStateTest {
     }
 
     @Test
-    public void nombreEstadoDebeSerNoConfirmadoInicialmente() {
+    public void nombreEstadoDebeSerEnArmadoInicialmente() {
         Pedido pedido = new Pedido(new MobileStrategy());
 
-        assertEquals("No confirmado", pedido.getNombreEstado());
+        assertEquals("En armado", pedido.getNombreEstado());
     }
 }

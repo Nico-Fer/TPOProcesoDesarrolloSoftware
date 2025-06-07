@@ -1,5 +1,6 @@
 package uade.tpo.modelo.pedidoState;
 
+import uade.tpo.modelo.pago.MetodoPago;
 import uade.tpo.modelo.pedido.Pedido;
 
 public class ListoParaEntregarState implements EstadoPedidoState{
@@ -22,5 +23,11 @@ public class ListoParaEntregarState implements EstadoPedidoState{
     @Override
     public Float calcularTiempoRestantePedido(int cantidadPedidos) {
         return pedido.getPlataformaStrategy().calcularRutaPedido();
+    }
+
+    @Override
+    public boolean cancelarPedido() {
+        System.out.println("El pedido ya esta en camino. No se puede cancelar.");
+        return false;
     }
 }
